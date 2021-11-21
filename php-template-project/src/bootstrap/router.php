@@ -1,10 +1,22 @@
 <?php
 // set routes
 $routes = array(
-  'home' => array(
-    'controller' => 'Pages',
+   'home' => array(
+    'controller' => 'User',
     'action' => 'index'
-  )
+  ),
+  'login' => array(
+    'controller' => 'User',
+    'action' => 'login'
+  ),
+'signup' => array(
+    'controller' => 'User',
+    'action' => 'signup'
+),
+'profile' => array(
+    'controller' => 'User',
+    'action' => 'profile'
+)
 );
 
 if(empty($_GET['page'])) {
