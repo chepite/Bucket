@@ -7,7 +7,39 @@ require_once __DIR__ . '/../model/User.php';
 class UserController extends Controller {
 
   public function index(){}
-  public function login(){}
+ public function login()
+    {
+        // $errors= [];
+        if (!empty($_POST['action'])) {
+            if ($_POST['action'] == 'login') {
+                //test errors
+                $errors=[];
+                $tryingUser = User::where('username', $_POST['username'])->first();
+                if (!empty($tryingUser)) {
+                    if ($tryingUser->password == $_POST['password']) {
+                        //check for update streak
+                        //$this->_updateStreak($tryingUser);
+                        $_SESSION["loggedin"] = true;
+                        $_SESSION["username"] = $tryingUser->username;
+                        $_SESSION["userId"] = $tryingUser->id;
+                        header('Location: index.php?page=profile');
+                        exit();
+                    } else {
+                        //echo ('<p>password incorrect, try again</p>');
+                         $errors['incorrectPassword']= 'Password incorrect, try again.';
+                    }
+                } else {
+                    //echo ('<p>no such user</p>');
+                     $errors['noUser']= "User doesn't exist.";
+                }
+                $this->set('errors', $errors);
+            }
+        }
+        if (!empty($tryingUser)) {
+            $this->set('user', $tryingUser);
+        }
+        $this->set('title', 'login');
+    }
   public function signup()
     {
         // session_start();

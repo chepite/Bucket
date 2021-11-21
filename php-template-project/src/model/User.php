@@ -2,26 +2,11 @@
 
 use \Illuminate\Database\Eloquent\Model;
 
-<<<<<<< HEAD
-<<<<<<< HEAD:php-template-project/src/model/User.php
 class User extends Model {
-=======
-class Activity extends Model {
->>>>>>> main:php-template-project/src/model/Activity.php
-=======
-class User extends Model {
->>>>>>> main
   // refer to a database table, an object us used here for demo purposes
   public $timestamps = false;
 
   public function bucketlist(){
-<<<<<<< HEAD
-<<<<<<< HEAD:php-template-project/src/model/User.php
-    return $this->belongsToMany(Bucketlist::class);
-=======
-    return $this-> belongsTo(Bucketlist::class);
->>>>>>> main:php-template-project/src/model/Activity.php
-=======
     return $this->belongsToMany(Bucketlist::class);
   }
 
@@ -47,6 +32,5 @@ class User extends Model {
       $errors['password mismatch'] = 'please repeat the password correctly to resume';
     }
     return $errors;
->>>>>>> main
   }
 }
