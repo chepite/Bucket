@@ -4,3 +4,5 @@ dist/
 heroku/
 .env
 vendor/
+.htaccess
+
