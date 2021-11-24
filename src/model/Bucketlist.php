@@ -10,6 +10,23 @@ class Bucketlist extends Model {
     return $this-> belongsTo(User::class);
   }
   public function activities(){
-    return $this->hasMany(Activity::class);
+    return $this->belongsToMany(Activity::class);
+  }
+
+  public static function validatinitialCreate($data){
+    $errors= [];
+    if(empty($data['name'])){
+      $errors['name'] = 'name fault';
+    }
+    if(empty($data['description'])){
+      $errors['description'] = 'description fault';
+    }
+    if(empty($data['creatorId'])){
+      $errors['creatorId'] = 'creatorId fault';
+    }
+    if(empty($data['isPrivate'])){
+      $errors['isPrivate'] = 'isPrivate fault';
+    }
+    return $errors;
   }
 }

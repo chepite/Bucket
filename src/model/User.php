@@ -7,7 +7,7 @@ class User extends Model {
   public $timestamps = false;
 
   public function bucketlist(){
-    return $this->belongsToMany(Bucketlist::class);
+    return $this->hasMany(Bucketlist::class);
   }
 
   public static function validatesignup($data){

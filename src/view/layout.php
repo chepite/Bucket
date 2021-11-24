@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-      <header><h1 class="pagetitle">Bucket - Plan your future</h1></header>
+      <header><h1 class="pagetitle"><a href="index.php">Bucket - Plan your future</a></h1></header>
       <?php echo $content;?>
   </div>
   <?php echo $js; ?>
