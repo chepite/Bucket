@@ -18,11 +18,11 @@ class UserController extends Controller {
               $newBucket = new Bucketlist();
               //tel hoeveel bucketlists de user al heeft en dan
               //is de naam van de bucktlist "bucketlist #x"
-              $amountLists= Bucketlist::where('creatorId', $_SESSION['userId'])->count();
+              $amountLists= Bucketlist::where('user_id', $_SESSION['userId'])->count();
 
               $newBucket->name="Bucketlist ".$amountLists;
               $newBucket->description="description";
-              $newBucket->creatorId=$_SESSION["userId"];
+              $newBucket->user_id=$_SESSION["userId"];
               $newBucket->isPrivate=true;
               $errors= Bucketlist::validatinitialCreate($newBucket);
               if(empty($errors)){

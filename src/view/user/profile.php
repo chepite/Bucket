@@ -4,6 +4,7 @@ if(!empty($_SESSION['userId'])){
 
   if(isset($errors)){
     var_dump($errors);
+
 }
 //<input type="hidden" name="action" value="addBucketlist">
 

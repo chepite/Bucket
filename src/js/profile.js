@@ -3,7 +3,7 @@
   const fillList=(data)=>{
     const $location = document.querySelector(".bucketlistList");
     $location.innerHTML = data.map((bucketlist)=>{
-      return `<li><a>${bucketlist.name}<a></li>`
+      return `<li><a href="index.php?page=detail&id=${bucketlist.id}">${bucketlist.name}<a></li>`;
     }).join("");
   }
   const bucketlists = async ()=>{

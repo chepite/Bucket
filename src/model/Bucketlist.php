@@ -21,8 +21,8 @@ class Bucketlist extends Model {
     if(empty($data['description'])){
       $errors['description'] = 'description fault';
     }
-    if(empty($data['creatorId'])){
-      $errors['creatorId'] = 'creatorId fault';
+    if(empty($data['user_id'])){
+      $errors['user_id'] = 'creatorId fault';
     }
     if(empty($data['isPrivate'])){
       $errors['isPrivate'] = 'isPrivate fault';
