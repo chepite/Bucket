@@ -5,4 +5,4 @@ heroku/
 .env
 vendor/
 .htaccess
-
+.htaccess copy

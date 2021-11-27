@@ -2,9 +2,44 @@
 
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
+require_once __DIR__ . '/../model/Bucketlist.php';
+
 
 
 class UserController extends Controller {
+
+
+ public function profile(){
+    if (!empty($_POST['action'])) {
+            if ($_POST['action'] == 'addBucketlist') {
+              //vind nog manier hoe we de bucketlist gaan maken qua flow
+              //main form op profile of eerst klikken en dan bucketlist aanpassen op de
+              //detail page van de bucketlist zoals op spotify zelf
+              $newBucket = new Bucketlist();
+              //tel hoeveel bucketlists de user al heeft en dan
+              //is de naam van de bucktlist "bucketlist #x"
+              $amountLists= Bucketlist::where('user_id', $_SESSION['userId'])->count();
+
+              $newBucket->name="Bucketlist ".$amountLists;
+              $newBucket->description="description";
+              $newBucket->user_id=$_SESSION["userId"];
+              $newBucket->isPrivate=true;
+              $errors= Bucketlist::validatinitialCreate($newBucket);
+              if(empty($errors)){
+                $newBucket->save();
+                header('Location:index.php?page=profile');
+                exit();
+              }
+              else{
+                $this->set('errors', $errors);
+              }
+              $this->set('amountlists', $amountLists);
+            }
+          }
+  }
+
+
+
 
   public function index(){}
  public function login()
@@ -40,6 +75,7 @@ class UserController extends Controller {
         }
         $this->set('title', 'login');
     }
+
   public function signup()
     {
         // session_start();
@@ -76,6 +112,13 @@ class UserController extends Controller {
         }
         $this->set('title', 'signup');
     }
-    public function profile(){}
+
+    public function bucketlistApi(){
+      $lists = User::where('id', $_SESSION['userId'])->first()->bucketlist;
+      echo $lists->toJson();
+      exit();
+    }
 
 }
+
+

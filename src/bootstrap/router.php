@@ -16,7 +16,19 @@ $routes = array(
 'profile' => array(
     'controller' => 'User',
     'action' => 'profile'
-)
+),
+'bucketlist-api' => array(
+    'controller' => 'User',
+    'action' => 'bucketlistApi'
+),
+'detail' => array(
+    'controller' => 'Bucketlist',
+    'action' => 'detail'
+),
+'detail-api' => array(
+    'controller' => 'Bucketlist',
+    'action' => 'detailApi'
+),
 );
 
 if(empty($_GET['page'])) {
