@@ -23,5 +23,5 @@ else{
 
 <ul class="bucketlistList">
 </ul>
-
+<a href="destroy.php">Log out</a>
 <script src="./js/profile.js"></script>
