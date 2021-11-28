@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php echo $css; ?>
-  <title>Webpack - php - template</title>
+  <title>Bucket</title>
 </head>
 <body>
   <div class="container">
