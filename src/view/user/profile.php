@@ -11,7 +11,7 @@ if(!empty($_SESSION['userId'])){
 echo('
 <form method="post" action="index.php?page=profile">
 <input type="hidden" name="action" value="addBucketlist">
-<input type="submit">
+<input type="submit" value="add bucketlist">
 </form>');
 }
 else{

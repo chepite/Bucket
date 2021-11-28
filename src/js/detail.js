@@ -17,7 +17,25 @@
 
 
 
+  const handleClickDelete = (e) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this show?"
+    );
+    if (!confirm) {
+      // stop the deletion
+      e.preventDefault();
+    }
+  };
+
+
+
+
+
+
+
   const init = () =>{
+    const $link = document.querySelector(`.delete-link`);
+    $link.addEventListener(`click`, handleClickDelete)
     activities();
   }
   init();

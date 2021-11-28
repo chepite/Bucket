@@ -36,6 +36,17 @@ class UserController extends Controller {
               $this->set('amountlists', $amountLists);
             }
           }
+
+          if(!empty($_GET['action']) && !empty($_GET["id"])){
+      // check if action is delete
+      if($_GET['action'] == 'delete'){
+        $bucketlistToDelete = Bucketlist::find($_GET['id']);
+        $bucketlistToDelete->delete();
+        header("Location: index.php?page=profile");
+        exit();
+        //Bucketlist::destroy($_GET['id']);
+      }
+    }
   }
 
 
