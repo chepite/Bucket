@@ -27,7 +27,7 @@ class BucketlistController extends Controller {
 
    if(!empty($_POST['action']) && !empty($_GET["id"])){
       // check if action is delete
-
+      // fix isprivate in next sprint now the index of isprivate isn't found -> why?
       if($_POST['action'] == 'editBucketlist'){
         $bucketlist->name= $_POST["name"];
         $bucketlist->description = $_POST["description"];
