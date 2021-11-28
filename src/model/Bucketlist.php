@@ -27,6 +27,24 @@ class Bucketlist extends Model {
     if(empty($data['isPrivate'])){
       $errors['isPrivate'] = 'isPrivate fault';
     }
+
+    return $errors;
+  }
+
+  public static function validate($data){
+    $errors= [];
+    if(empty($data['name'])){
+      $errors['name'] = 'name fault';
+    }
+    if(empty($data['description'])){
+      $errors['description'] = 'description is empty';
+    }
+    // if(empty($data['isPrivate'])){
+    //   $errors['isPrivate'] = 'isPrivate contains an error';
+    // }
+    //  if (!isset($data['isPrivate']) || !filter_var($data['isPrivate'], FILTER_VALIDATE_INT)) {
+    //   $errors['isPrivate'] = 'isPrivate error';
+    // }
     return $errors;
   }
 }

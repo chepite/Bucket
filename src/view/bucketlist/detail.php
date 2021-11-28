@@ -1,7 +1,27 @@
 <link rel="stylesheet" href="css/detail.css">
+<?php
+        // de fouten weergeven: in de praktijk bij de velden zelf
+        if(!empty($errors)){
+            var_dump($errors);
+        }
+        if(!empty($private)){
+            var_dump($private);
+        }
+    ?>
 <h2><?php echo("listId ".$_SESSION["detailBucketlist"])?></h2>
-<div>    <button type="submit" name="action" value="Edit">Edit</button>
+<div>    <a class="edit-link">Edit</a>
 <a class="threedot">...</a>
+</div>
+<div class="editFormDiv">
+  <form class="editForm" method="post">
+    <input type="hidden" name="action" value="editBucketlist">
+    <input type="text" name="name" required placeholder="Bucketlist Name" size="32" value="<?php echo $bucketlist['name'] ?>">
+    <input type="text" name="description" required placeholder="Bucketlist description" size="255" value="<?php echo $bucketlist['description'] ?>">
+    <input type="checkbox" name="isPrivate" value="<?php if($bucketlist->isPrivate == 1){echo("0");}else{echo("1");}?>" <?php if($bucketlist->isPrivate == 1){echo("checked");}else{echo("");}?>>
+
+
+  <button type="submit" >Submit</button>
+  </form>
 </div>
 <div class="threedotDropDown">
   <ul>

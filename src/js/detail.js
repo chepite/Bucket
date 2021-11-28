@@ -27,6 +27,11 @@
     }
   };
 
+  const handleClickEdit = (e)=>{
+    e.preventDefault();
+    const $editFormDiv= document.querySelector(".editFormDiv")
+  }
+
 
 
 
@@ -34,8 +39,10 @@
 
 
   const init = () =>{
-    const $link = document.querySelector(`.delete-link`);
-    $link.addEventListener(`click`, handleClickDelete)
+    const $editLink = document.querySelector('.edit-link');
+    $editLink.addEventListener("click", handleClickEdit);
+    const $Dellink = document.querySelector(`.delete-link`);
+    $Dellink.addEventListener(`click`, handleClickDelete);
     activities();
   }
   init();

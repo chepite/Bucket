@@ -11,6 +11,8 @@ class BucketlistController extends Controller {
 
 
   public function detail(){
+  $bucketlist = Bucketlist::find($_GET['id']);
+
    $_SESSION['detailBucketlist'] = $_GET["id"];
   //  if(!empty($_GET['action']) && !empty($_GET["id"])){
   //     // check if action is delete
@@ -22,6 +24,27 @@ class BucketlistController extends Controller {
   //       //Bucketlist::destroy($_GET['id']);
   //     }
   //   }
+
+   if(!empty($_POST['action']) && !empty($_GET["id"])){
+      // check if action is delete
+
+      if($_POST['action'] == 'editBucketlist'){
+        $bucketlist->name= $_POST["name"];
+        $bucketlist->description = $_POST["description"];
+        $bucketlist->isPrivate = $_POST["isPrivate"];
+
+        $errors =Bucketlist::validate($bucketlist);
+        if(empty($errors)){
+          $bucketlist->save();
+          // header("Location: index.php?page=detail?id=".$_SESSION["id"]);
+          // exit();
+        }
+        else{
+          $this->set('errors', $errors);
+        }
+      }
+    }
+  $this->set("bucketlist", $bucketlist);
   }
 
   public function detailApi(){
