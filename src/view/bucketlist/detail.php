@@ -36,5 +36,37 @@
 </div>
 <ul class="activityList">
 </ul>
+<a class="addActivityLink" href="">Add new activity</a>
+<div class="addActivity">
+<form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
+<input type="hidden" name="action" value="addActivity">
+<input type="text" name="name" required placeholder="Bucketlist name" size="32"></br>
+    <input type="date" name="date" required placeholder="Bucketlist date"></br>
+    <input type="text" name="place" required placeholder="Bucketlist place" size="255"></br>
+    <input type="number" name="price" required placeholder="Bucketlist price" ></br>
+    <input type="text" name="company" required placeholder="Bucketlist company" size="255"></br>
+    <!--input for categories with api-->
+    <!--datalist
+      select
+        add options
+      select
+    datalist-->
+<input type="submit" value="add new activity">
+</form>
+      </div>
+  </br>
+<a class="addExistingAcitivityLink" href="">Add existing activity</a>
+<div class="addExistingActivity">
+<form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
+    <input type="hidden" name="action" value="addExistingActivity">
+    <!--option list of activities that the user has made/liked-->
+    <!--datalist
+      select
+        add options
+      select
+    datalist-->
+<input type="submit" value="add existing activity">
+</form>
+      </div>
 
 <script src="./js/detail.js"></script>
