@@ -27,11 +27,13 @@ class BucketlistController extends Controller {
 
    if(!empty($_POST['action']) && !empty($_GET["id"])){
       // check if action is delete
-      // fix isprivate in next sprint now the index of isprivate isn't found -> why?
       if($_POST['action'] == 'editBucketlist'){
+        //if checkbox isn't checked which means the playlist isn't private the post var isn't set -> workaround with function var $private
+        $private= 1;
         $bucketlist->name= $_POST["name"];
         $bucketlist->description = $_POST["description"];
-        $bucketlist->isPrivate = $_POST["isPrivate"];
+        if(!isset($_POST["isPrivate"])){$private= 0;}
+        $bucketlist->isPrivate = $private;
 
         $errors =Bucketlist::validate($bucketlist);
         if(empty($errors)){

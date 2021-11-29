@@ -15,10 +15,13 @@
 <div class="editFormDiv">
   <form class="editForm" method="post">
     <input type="hidden" name="action" value="editBucketlist">
-    <input type="text" name="name" required placeholder="Bucketlist Name" size="32" value="<?php echo $bucketlist['name'] ?>">
+    <label for="name">Bucketlist name</label></br>
+    <input type="text" name="name" required placeholder="Bucketlist Name" size="32" value="<?php echo $bucketlist['name'] ?>"></br>
+    <label for="description">Bucketlist description</label>
     <input type="text" name="description" required placeholder="Bucketlist description" size="255" value="<?php echo $bucketlist['description'] ?>">
+    <label for="isPrivate">Make bucketlist private</label></br>
     <input type="checkbox" name="isPrivate" value="<?php if($bucketlist->isPrivate == 1){echo("0");}else{echo("1");}?>" <?php if($bucketlist->isPrivate == 1){echo("checked");}else{echo("");}?>>
-
+      </br>
 
   <button type="submit" >Submit</button>
   </form>
