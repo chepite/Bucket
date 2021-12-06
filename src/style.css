@@ -42,4 +42,7 @@ li {
 
 body {
   background-color: var(--colorYellow);
+  background-image: url(assets/gridbackground.png);
+  background-repeat: repeat;
+  background-size: 50%;
 }
