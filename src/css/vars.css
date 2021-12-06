@@ -6,13 +6,14 @@
   --colorGray: #fafafa;
   --colorGrayDark: #9c9c9c;
   --colorYellow: #FFC400;
+  --colorYellowTitle:#FFD90A;
   --spacerSmall: .75rem; /* 12px */
   --spacerRegular: 1rem; /* 16px */
   --spacerBig: 1.88rem; /* 30px */
   --fontSmall: .75rem; /* 12px */
   --fontRegular: 1.13rem; /* 18px */
   --fontMedium: 1.25rem; /* 20px */
-  --fontBig: 1.75rem; /* 28px */
+  --fontBig: 7rem;
   --font: 'Shrikhand', cursive;
   --fontWeightRegular: 400;
   --fontWeightBold: 500;
