@@ -1,5 +1,7 @@
 @import './css/reset.css';
 @import './css/vars.css';
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 
 html {
   box-sizing: border-box;
@@ -36,4 +38,8 @@ li {
 .demo-list {
   margin-top: var(--spacerBig);
   text-transform: capitalize;
+}
+
+body {
+  background-color: var(--colorYellow);
 }

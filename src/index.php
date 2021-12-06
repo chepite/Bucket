@@ -12,7 +12,7 @@ if (file_exists("../.env")) {
   }
 }
 
-require_once getenv('PHP_AUTOLOAD_PATH') ?: "../../vendor/autoload.php";
+require_once getenv('PHP_AUTOLOAD_PATH') ?: "../../../vendor/autoload.php";
 require_once "./bootstrap/database.php";
 
 require_once "./bootstrap/router.php";

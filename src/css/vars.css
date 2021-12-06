@@ -5,6 +5,7 @@
   --colorSecondary: #a3f4dc;
   --colorGray: #fafafa;
   --colorGrayDark: #9c9c9c;
+  --colorYellow: #FFC400;
   --spacerSmall: .75rem; /* 12px */
   --spacerRegular: 1rem; /* 16px */
   --spacerBig: 1.88rem; /* 30px */
@@ -12,7 +13,7 @@
   --fontRegular: 1.13rem; /* 18px */
   --fontMedium: 1.25rem; /* 20px */
   --fontBig: 1.75rem; /* 28px */
-  --font: 'Roboto', sans-serif;
+  --font: 'Shrikhand', cursive;
   --fontWeightRegular: 400;
   --fontWeightBold: 500;
 }
