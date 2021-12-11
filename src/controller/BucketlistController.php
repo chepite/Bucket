@@ -46,6 +46,23 @@ class BucketlistController extends Controller {
         }
       }
     }
+    if(!empty($_POST['action']) && !empty($_GET["id"])){
+      // check if action is adding an activity
+      if($_POST['action'] == 'addActivity'){
+          $activity = new Activity();
+          $activity->name= $_POST["name"];
+          $activity->date= $_POST["date"];
+          $activity->place= $_POST["place"];
+          $activity->price= $_POST["price"];
+          $activity->company= $_POST["company"];
+          //$activity->category= $_POST["category"];
+          $error= Activity::validate($activity);
+          if(empty($error)){
+            $activity->save();
+          }
+
+      }
+    }
   $this->set("bucketlist", $bucketlist);
   }
 
@@ -53,6 +70,10 @@ class BucketlistController extends Controller {
     $activities = Bucketlist::where("id", $_SESSION["detailBucketlist"])->first()->activities;
     echo $activities->toJson();
     exit();
+  }
+
+  public function addActivity(){
+
   }
 }
 ?>

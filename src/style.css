@@ -54,3 +54,6 @@ body {
   background-size: 50%;
 }
 
+.button__login {
+  text-decoration: none;
+}

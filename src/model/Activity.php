@@ -8,5 +8,11 @@ class Activity extends Model {
     return $this->belongsToMany(Bucketlist::class);
   }
 
+  public static function validate(){
+    if(empty($data['name'])){
+      $errors['name'] = 'Please fill in a name for the activity';
+    }
+  }
+
 }
 ?>
