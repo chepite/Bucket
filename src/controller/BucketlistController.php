@@ -49,6 +49,7 @@ class BucketlistController extends Controller {
     if(!empty($_POST['action']) && !empty($_GET["id"])){
       // check if action is adding an activity
       if($_POST['action'] == 'addActivity'){
+        $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
           $activity = new Activity();
           $activity->name= $_POST["name"];
           $activity->date= $_POST["date"];
@@ -58,7 +59,10 @@ class BucketlistController extends Controller {
           //$activity->category= $_POST["category"];
           $error= Activity::validate($activity);
           if(empty($error)){
-            $activity->save();
+            //$activity->save();
+            $bucketlist->activities()->save($activity);
+            // header("Location: index.php?page=detail&id=".$_GET["id"]);
+            //exit();
           }
 
       }
