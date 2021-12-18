@@ -1,7 +1,7 @@
 <?php
 if(empty($_SESSION['userId'])){
   echo('
-<a href="index.php?page=login">login</a>' );
+<a class="button__login" href="index.php?page=login">login</a>' );
 }
 else{
   echo('welcome back '.$_SESSION['username']);
