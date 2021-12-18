@@ -1,7 +1,7 @@
 @import './css/reset.css';
 @import './css/vars.css';
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 html {
   box-sizing: border-box;
@@ -56,4 +56,31 @@ body {
 
 .button__login {
   text-decoration: none;
+}
+
+.search__bar{
+  height: 4rem;
+  width: 75rem;
+  border: 5px solid black;
+}
+
+.search__bar[type=text]{
+  font-family: 'Noto Sans', sans-serif;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.search__bar::placeholder{
+  font-size: 2rem;
+}
+
+.formLine{
+  display: inline;
+  width: 100%;
+}
+
+.submit__button{
+  height: 4rem;
+  width: 6rem;
+  border: 5px solid black;
 }

@@ -2,12 +2,13 @@
 <form method="post" action="index.php?page=signup">
     <input type="hidden" name="action" required value="addUser"/>
     <div class="formLine">
-    <label for="search">Search</label>
-    <input type="text"  required name="search" value="<?php
+    <label for="search"></label>
+    <input class="search__bar" type="text" placeholder="Looking for new lists?" required name="search" value="<?php
           if (!empty($_POST['username'])) echo $_POST['username'];?>">
+    <input class="submit__button" type="submit">
     </div>
 
-    <input type="submit">
+    
 </form>
 <!-- end search form -->
 
