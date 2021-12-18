@@ -1,3 +1,8 @@
+
+
+
+
+
 <link rel="stylesheet" href="css/detail.css">
 <?php
         // de fouten weergeven: in de praktijk bij de velden zelf

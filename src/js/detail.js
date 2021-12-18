@@ -19,7 +19,7 @@
 
   const handleClickDelete = (e) => {
     const confirm = window.confirm(
-      "Are you sure you want to delete this show?"
+      "Are you sure you want to delete this bucketlist?"
     );
     if (!confirm) {
       // stop the deletion
