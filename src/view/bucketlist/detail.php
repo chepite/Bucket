@@ -50,12 +50,16 @@
     <input type="text" name="place" required placeholder="Bucketlist place" size="255"></br>
     <input type="number" name="price" required placeholder="Bucketlist price" ></br>
     <input type="text" name="company" required placeholder="Bucketlist company" size="255"></br>
-    <!--input for categories with api-->
-    <!--datalist
-      select
-        add options
-      select
-    datalist-->
+  <input list="categorydatalist" id="categories" name="category" required/>
+    <datalist  id="categorydatalist" name="categorydatalist">
+            <select class="categorydatalist--list" name="categorieDataListSelect">
+            <?php
+            foreach($categories as $category){
+             echo ('<option value="'.$category->id.'">'.$category->name.'</option>');
+            }
+          ?>
+            </select>
+          </datalist>
 <input type="submit" value="add new activity">
 </form>
       </div>

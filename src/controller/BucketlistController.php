@@ -1,19 +1,17 @@
 <?php
-
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
 require_once __DIR__.'/../model/Bucketlist.php';
 require_once __DIR__.'/../model/Activity.php';
-
+require_once __DIR__.'/../model/Category.php';
 
 class BucketlistController extends Controller {
 
-
-
   public function detail(){
   $bucketlist = Bucketlist::find($_GET['id']);
-
    $_SESSION['detailBucketlist'] = $_GET["id"];
+   $categories= Category::get();
+   $_SESSION['categories'] = $categories;
   //  if(!empty($_GET['action']) && !empty($_GET["id"])){
   //     // check if action is delete
   //     if($_GET['action'] == 'delete'){
@@ -35,11 +33,11 @@ class BucketlistController extends Controller {
         if(!isset($_POST["isPrivate"])){$private= 0;}
         $bucketlist->isPrivate = $private;
 
-        $errors =Bucketlist::validate($bucketlist);
+        $errors =Bucketlist::validateBucketlist($bucketlist);
         if(empty($errors)){
           $bucketlist->save();
-          // header("Location: index.php?page=detail?id=".$_SESSION["id"]);
-          // exit();
+           //header("Location:index.php?page=detail?id=".$_SESSION["id"]);
+           //exit();
         }
         else{
           $this->set('errors', $errors);
@@ -56,18 +54,19 @@ class BucketlistController extends Controller {
           $activity->place= $_POST["place"];
           $activity->price= $_POST["price"];
           $activity->company= $_POST["company"];
-          //$activity->category= $_POST["category"];
+          $activity->category_id= $_POST["category"];
           $error= Activity::validate($activity);
           if(empty($error)){
-            //$activity->save();
             $bucketlist->activities()->save($activity);
-            // header("Location: index.php?page=detail&id=".$_GET["id"]);
+            //header("Location:index.php?page=detail&id=".$_GET["id"].'"');
             //exit();
           }
 
       }
     }
   $this->set("bucketlist", $bucketlist);
+     $this->set("categories", $categories);
+
   }
 
   public function detailApi(){

@@ -114,7 +114,7 @@ class UserController extends Controller {
                         $_SESSION['username'] = $_POST['username'];
                         $_SESSION['password'] = $_POST['password'];
                         header('Location: index.php?page=profile');
-                        // exit();
+                        //exit();
                     } else {
                         $this->set('errors', $errors);
                     }

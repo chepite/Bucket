@@ -12,6 +12,9 @@ class Bucketlist extends Model {
   public function activities(){
     return $this->belongsToMany(Activity::class);
   }
+  public function categories(){
+    return $this->belongsToMany(Category::class);
+  }
 
   public static function validatinitialCreate($data){
     $errors= [];
@@ -31,7 +34,7 @@ class Bucketlist extends Model {
     return $errors;
   }
 
-  public static function validate($data){
+  public static function validateBucketlist($data){
     $errors= [];
     if(empty($data['name'])){
       $errors['name'] = 'name fault';
@@ -39,12 +42,6 @@ class Bucketlist extends Model {
     if(empty($data['description'])){
       $errors['description'] = 'description is empty';
     }
-    // if(empty($data['isPrivate'])){
-    //   $errors['isPrivate'] = 'isPrivate contains an error';
-    // }
-    //  if (!isset($data['isPrivate']) || !filter_var($data['isPrivate'], FILTER_VALIDATE_INT)) {
-    //   $errors['isPrivate'] = 'isPrivate error';
-    // }
     return $errors;
   }
 }
