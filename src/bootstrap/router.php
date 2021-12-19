@@ -29,6 +29,10 @@ $routes = array(
     'controller' => 'Bucketlist',
     'action' => 'detailApi'
 ),
+'search-api' => array(
+    'controller' => 'User',
+    'action' => 'searchApi'
+),
 );
 
 if(empty($_GET['page'])) {

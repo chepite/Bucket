@@ -130,6 +130,12 @@ class UserController extends Controller {
       exit();
     }
 
+    public function searchApi(){
+          $lists = Bucketlist::where('name','LIKE', '%'.$_POST['searchtext'].'%')->get();
+          echo $lists->toJson();
+             exit();
+  }
+
 }
 
 

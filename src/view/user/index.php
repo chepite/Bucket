@@ -3,12 +3,12 @@
     <input type="hidden" name="action" required value="addUser"/>
     <div class="formLine">
     <label for="search"></label>
-    <input class="search__bar" type="text" placeholder="Looking for new lists?" required name="search" value="<?php
-          if (!empty($_POST['username'])) echo $_POST['username'];?>">
+    <input class="search__bar" type="text" placeholder="Looking for new lists?" required name="searchtext" value="<?php
+          if (!empty($_POST['searchtext'])) echo $_POST['searchtext'];?>">
     <input class="submit__button" type="submit">
     </div>
 
-    
+
 </form>
 <!-- end search form -->
 
@@ -25,3 +25,7 @@ echo('<br><a href="destroy.php"> Log Out</a>
 ');
 }
 ?>
+
+
+<script src="./js/search.js"></script>
+
