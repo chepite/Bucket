@@ -52,7 +52,10 @@ class UserController extends Controller {
 
 
 
-  public function index(){}
+  public function index(){
+    $bucketlists = $this->_getFormSearchResults();
+    $this->set('bucketlists', $bucketlists);
+  }
  public function login()
     {
         // $errors= [];
@@ -85,7 +88,7 @@ class UserController extends Controller {
             $this->set('user', $tryingUser);
         }
         $this->set('title', 'login');
-    }
+  }
 
   public function signup()
     {
@@ -129,13 +132,33 @@ class UserController extends Controller {
       echo $lists->toJson();
       exit();
     }
-
     public function searchApi(){
-          $lists = Bucketlist::where('name','LIKE', '%'.$_POST['searchtext'].'%')->get();
-          echo $lists->toJson();
-             exit();
-  }
+      $bucketlists = $this->_getFormSearchResults();
+      echo $bucketlists->toJson();
+
+      exit();
+
+    }
+
+    private function _getFormSearchResults() {
+        $bucketlistQuery = Bucketlist::query();
+      if(!empty($_GET['searchtext'])){
+        $bucketlistQuery =$bucketlistQuery->where("name", "like", "%".$_GET["searchtext"]."%");
+      }
+      $bucketlists = $bucketlistQuery->limit(100)->get();
+
+      return $bucketlists;
+    }
+
 
 }
+
+?>
+
+
+
+
+
+
 
 
