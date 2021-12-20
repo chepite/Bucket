@@ -34,8 +34,8 @@
     console.log("url", url);
 
     const response = await fetch(url);
-    const shows = await response.json();
-    updateList(shows);
+    const bucketlists = await response.json();
+    updateList(bucketlists);
 
     window.history.pushState({}, "", `index.php?page=home&${qs}`);
   };

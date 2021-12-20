@@ -149,7 +149,7 @@ class UserController extends Controller {
       if(!empty($_GET['searchtext'])){
         $bucketlistQuery =$bucketlistQuery->where("name", "like", "%".$_GET["searchtext"]."%");
       }
-      $bucketlists = $bucketlistQuery->limit(100)->get();
+      $bucketlists = $bucketlistQuery->where("isPrivate", "0")->limit(100)->get();
 
       return $bucketlists;
     }
