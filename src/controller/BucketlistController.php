@@ -24,7 +24,6 @@ class BucketlistController extends Controller {
   //   }
 
    if(!empty($_POST['action']) && !empty($_GET["id"])){
-      // check if action is delete
       if($_POST['action'] == 'editBucketlist'){
         //if checkbox isn't checked which means the playlist isn't private the post var isn't set -> workaround with function var $private
         $private= 1;
@@ -59,6 +58,20 @@ class BucketlistController extends Controller {
             exit();
           }
 
+      }
+    }
+       if(!empty($_GET['action']) && !empty($_GET["id"])){
+      // check if action is adding an activity
+      if($_GET['action'] == 'deleteActivity'){
+// $bucketlistToDelete = Bucketlist::find($_GET['id']);
+//         $bucketlistToDelete->delete();
+//         header("Location: index.php?page=profile");
+//         exit();
+          $bucketlist= Bucketlist::where("id",$_SESSION["detailBucketlist"])->first();
+          $activityToDelete= $bucketlist->activities()->where("activity_id", $_GET["Activityid"])->delete();
+          //$activityToDelete->delete();
+          header("Location:index.php?page=detail&id=".$_SESSION["detailBucketlist"]);
+          exit();
       }
     }
   $this->set("bucketlist", $bucketlist);
