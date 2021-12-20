@@ -67,7 +67,9 @@ class UserController extends Controller {
                 $errors=[];
                 $tryingUser = User::where('username', $_POST['username'])->first();
                 if (!empty($tryingUser)) {
-                    if ($tryingUser->password == $_POST['password']) {
+                    // if ($tryingUser->password == $_POST['password']) {
+                        if (password_verify($_POST['password'],$tryingUser->password)) {
+
                         //check for update streak
                         //$this->_updateStreak($tryingUser);
                         $_SESSION["loggedin"] = true;
@@ -109,11 +111,12 @@ class UserController extends Controller {
                     if (empty($errors)) {
                         $user = new User;
                         $user->username = $_POST['username'];
-                        $user->password = $_POST['password'];
+                        $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                         $user->save();
                         $_SESSION['userId'] = $user->id;
                         $_SESSION['username'] = $_POST['username'];
-                        $_SESSION['password'] = $_POST['password'];
+                        // $_SESSION['password'] = $_POST['password'];
+                        $_SESSION['password'] = $user-> password;
                         header('Location: index.php?page=profile');
                         //exit();
                     } else {
