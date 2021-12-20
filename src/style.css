@@ -23,6 +23,11 @@ main{
   margin: 0 auto;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 li {
   line-height: 1.8;
 }
@@ -121,8 +126,6 @@ body {
 .button__wrapper a{
   text-decoration: none;
   color: black;
-
-  
 }
 .welcome__text {
   -webkit-text-stroke: 4px black;
@@ -134,7 +137,12 @@ body {
   font-size: 5rem;
   color: #FF6A6A;
 }
-
+.footer{
+  border: 5px solid black;
+  padding: 4rem;
+  background-color: #A5FFB6; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #A5FFB6 , #67FF82);
+}
 .footer__container{
   max-width: 100vw;
   margin: auto;
@@ -148,3 +156,24 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.footer__column{
+  width: 25%;
+}
+
+.footer__column h4{
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+.footer__column ul{
+  font-size: 1rem;
+  color: rgb(0, 153, 255);
+}
+.footer__column ul a{
+  font-size: 1rem;
+  color: rgb(0, 153, 255);
+}
+.footer__column a{
+  text-decoration: none;
+}
+

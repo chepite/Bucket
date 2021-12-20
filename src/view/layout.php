@@ -33,15 +33,27 @@ echo('<a href="destroy.php"> Log Out</a>
     <div class="row">
       <div class="footer__column">
         <h4>
-          Home
+          <a href="index.php">Home</a>
         </h4>
       </div>
       <div class="footer__column">
         <h4>
-          Profile
+          <a href="index.php?page=profile">Profile</a>
         </h4>
         <ul>
           <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+          <p>bucket lists here</p>
+
         </ul>
       </div>
       <div class="footer__column">
@@ -49,8 +61,8 @@ echo('<a href="destroy.php"> Log Out</a>
           Account
         </h4>
         <ul>
-          <p>log in</p>
-          <p>sign up</p>
+          <li><a href="index.php?page=login">Log In</a></li>
+          <li><a href="index.php?page=signup">Sign Up</a></li>
         </ul>
       </div><div class="footer__column">
           <h1 class="pagetitle"><a href="index.php">Buck it</a></h1>
