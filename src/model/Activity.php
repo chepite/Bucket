@@ -1,4 +1,3 @@
-
 <?php
 
 use \Illuminate\Database\Eloquent\Model;
@@ -16,8 +15,5 @@ class Activity extends Model {
       $errors['category'] = 'Please fill in a category for the activity';
     }
   }
-
-
-
 }
 ?>

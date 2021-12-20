@@ -5,7 +5,7 @@
     const $location = document.querySelector(".activityList");
     //add button for delete in this li
     $location.innerHTML = data.map((activity)=>{
-      return `<li>${activity.name}</li>`}).join("");
+      return `<li><div>${activity.name} <button></button></div></li>`}).join("");
   }
   const activities = async () => {
     const url = "index.php?page=detail-api";

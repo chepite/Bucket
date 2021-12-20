@@ -32,12 +32,9 @@ class BucketlistController extends Controller {
         $bucketlist->description = $_POST["description"];
         if(!isset($_POST["isPrivate"])){$private= 0;}
         $bucketlist->isPrivate = $private;
-
         $errors =Bucketlist::validateBucketlist($bucketlist);
         if(empty($errors)){
           $bucketlist->save();
-           //header("Location:index.php?page=detail?id=".$_SESSION["id"]);
-           //exit();
         }
         else{
           $this->set('errors', $errors);
@@ -58,8 +55,8 @@ class BucketlistController extends Controller {
           $error= Activity::validate($activity);
           if(empty($error)){
             $bucketlist->activities()->save($activity);
-            //header("Location:index.php?page=detail&id=".$_GET["id"].'"');
-            //exit();
+            header("Location:index.php?page=detail&id=".$_GET["id"]);
+            exit();
           }
 
       }

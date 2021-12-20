@@ -154,11 +154,3 @@ class UserController extends Controller {
 }
 
 ?>
-
-
-
-
-
-
-
-
