@@ -19,8 +19,9 @@ if(empty($_SESSION['userId'])){
 }
 else{
   echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
+  if(isset($title) && $title!= "profile"){
   echo('<br><a href="index.php?page=profile">Profile</a>
-');
+');}
 echo('<a href="destroy.php"> Log Out</a>
 ');
 }

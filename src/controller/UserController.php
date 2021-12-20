@@ -47,6 +47,7 @@ class UserController extends Controller {
         //Bucketlist::destroy($_GET['id']);
       }
     }
+    $this->set('title', 'profile');
   }
 
 
@@ -55,6 +56,7 @@ class UserController extends Controller {
   public function index(){
     $bucketlists = $this->_getFormSearchResults();
     $this->set('bucketlists', $bucketlists);
+    $this->set("title", "home");
   }
  public function login()
     {
@@ -78,7 +80,6 @@ class UserController extends Controller {
                          $errors['incorrectPassword']= 'Password incorrect, try again.';
                     }
                 } else {
-                    //echo ('<p>no such user</p>');
                      $errors['noUser']= "User doesn't exist.";
                 }
                 $this->set('errors', $errors);
