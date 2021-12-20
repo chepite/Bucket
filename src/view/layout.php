@@ -41,18 +41,15 @@ echo('<a href="destroy.php"> Log Out</a>
           <a href="index.php?page=profile">Profile</a>
         </h4>
         <ul>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
-          <p>bucket lists here</p>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
+          <li><p>bucket lists here</p></li>
 
         </ul>
       </div>

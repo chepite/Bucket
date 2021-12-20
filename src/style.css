@@ -106,27 +106,13 @@ body {
   position:absolute;
    top:2rem;
    right:2rem;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 5px solid black;
 
 }
 
-.button__wrapper {
-  
 
-  background-color:#FFFFA5;
-  font-size: 1rem;
-  padding: 1rem;
-  width: fit-content;
-  border: 5px solid black;
-
-  position:absolute;
-   top:2rem;
-   right:2rem;
-}
-
-.button__wrapper a{
-  text-decoration: none;
-  color: black;
-}
 .welcome__text {
   -webkit-text-stroke: 4px black;
 }

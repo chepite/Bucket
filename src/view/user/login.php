@@ -26,4 +26,4 @@
 
          <script src="js/validate.js"></script>
 
-<a href="index.php?page=signup">signup</a>
+
