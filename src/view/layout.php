@@ -15,13 +15,13 @@
       <?php
 if(empty($_SESSION['userId'])){
   echo('
-<a class="button__login" href="index.php?page=login">login</a>' );
+<a class="button button__login" href="index.php?page=login">login</a>' );
 }
 else{
   if(isset($title) && $title!= "profile"){
-  echo('<br><a href="index.php?page=profile">Profile</a>
+  echo('<br><a class="button button__profile" href="index.php?page=profile">Profile</a>
 ');}
-echo('<a href="destroy.php"> Log Out</a>
+echo('<a class="button button__logout" href="destroy.php"> Log Out</a>
 ');
 }
 ?>

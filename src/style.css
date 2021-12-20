@@ -120,6 +120,39 @@ body {
 
 }
 
+.button__logout{
+
+  position:absolute;
+   top:2rem;
+   right:2rem;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 5px solid black;
+
+}
+.button__logout:hover{
+  border: 5px solid black;
+  background-color: black;
+  color: white;
+
+}
+.button__profile{
+
+  position:absolute;
+   top:2rem;
+   right:12rem;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 5px solid black;
+
+}
+.button__profile:hover{
+  border: 5px solid black;
+  background-color: black;
+  color: white;
+
+}
+
 .welcome__text{
   -webkit-text-stroke: 4px black;
   display: flex;
@@ -187,6 +220,18 @@ body {
   color: rgb(0, 68, 255);
   padding-left: 0.4rem;
 }
+.button{
+  width: 8rem;
+}
+.button{
+  text-align: center;
+}
+.footer__container .pagetitle{
+  font-size: 5rem;
+}
+.footer__container .pagetitle a {
+  -webkit-text-stroke: 3px black;
+}
 
 @media(max-width: 767px){
   main{
@@ -198,7 +243,7 @@ body {
   margin-bottom: 2.5rem;
 }
   .pagetitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 .container .pagetitle{
   text-align: center;
@@ -263,6 +308,48 @@ body {
   background-color: black;
   color: white;
 
+}
+.button__logout{
+
+  position:absolute;
+   top:2.5rem;
+   right:1rem;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 2px solid black;
+
+}
+.button__logout:hover{
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+
+}
+.button__profile{
+
+  position:absolute;
+   top:2.5rem;
+   left: 1rem;
+   right: auto;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 2px solid black;
+
+}
+.button__profile:hover{
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+
+}
+.button{
+  width: 7rem;
+}
+.button{
+  text-align: center;
+}
+.footer__container .pagetitle a {
+  -webkit-text-stroke: 2px black;
 }
 }
 
