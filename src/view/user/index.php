@@ -1,16 +1,3 @@
-<?php
-if(empty($_SESSION['userId'])){
-  echo('
-<div class="button__wrapper"><a class="button__login" href="index.php?page=login">login</a></div>' );
-}
-else{
-  echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
-  echo('<br><div class="button__wrapper"><a href="index.php?page=profile">Profile</a></div>
-');
-echo('<br><div class="button__wrapper"><a href="destroy.php"> Log Out</a></div>
-');
-}
-?>
 <!-- search form -->
 <form action="index.php" class="searchform">
     <div class="formLine">

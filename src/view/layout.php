@@ -12,6 +12,19 @@
       <header>
         <h1 class="pagetitle"><a href="index.php">Buck it</a></h1>
       </header>
+      <?php
+if(empty($_SESSION['userId'])){
+  echo('
+<a class="button__login" href="index.php?page=login">login</a>' );
+}
+else{
+  echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
+  echo('<br><a href="index.php?page=profile">Profile</a>
+');
+echo('<a href="destroy.php"> Log Out</a>
+');
+}
+?>
       <?php echo $content;?>
   </div>
   <?php echo $js; ?>
