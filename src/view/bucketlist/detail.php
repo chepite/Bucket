@@ -30,7 +30,7 @@
   <ul>
     <li>                <a
                     class="delete-link"
-                    href="index.php?page=profile&action=delete&id=<?php echo $_SESSION['detailBucketlist']; ?>"> Delete
+                    href="index.php?page=profile&action=delete&id=<?php echo $_SESSION['detailBucketlist']; ?>"> Delete Bucketlist
                 </a></li>
   </ul>
 </div>
