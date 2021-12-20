@@ -143,3 +143,8 @@ body {
 .footer__container ul{
   list-style: none;
 }
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
