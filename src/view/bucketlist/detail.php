@@ -58,19 +58,5 @@
   <input type="submit" value="add new activity">
   </form>
       </div>
-  </br>
-<a class="addExistingAcitivityLink">Add existing activity</a>
-<div class="addExistingActivity hidden">
-<form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
-    <input type="hidden" name="action" value="addExistingActivity">
-    <!--option list of activities that the user has made/liked-->
-    <!--datalist
-      select
-        add options
-      select
-    datalist-->
-<input type="submit" value="add existing activity">
-</form>
-      </div>
 
 <script src="./js/detail.js"></script>
