@@ -18,7 +18,7 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
 
 <div class="bucketlists">
 </div>
-
+  
 </main>
 
 <script src="./js/search.js"></script>

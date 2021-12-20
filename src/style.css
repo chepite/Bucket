@@ -111,6 +111,12 @@ body {
    border: 5px solid black;
 
 }
+.button__login:hover{
+  border: 5px solid black;
+  background-color: black;
+  color: white;
+
+}
 
 
 .welcome__text {
