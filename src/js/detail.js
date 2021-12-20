@@ -7,7 +7,7 @@
     let url = window.location.href;
     $location.innerHTML = data.map((activity)=>{
       return `<li><div>${activity.name}   <a
-                    class="deleteActivity-link"
+                    class="deleteActivity-link delete"
                     href="${url}&action=deleteActivity&Activityid=${activity.id}"> Delete Activity
                 </a></div></li>`;}).join('');
   }

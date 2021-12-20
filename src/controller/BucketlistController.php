@@ -63,10 +63,6 @@ class BucketlistController extends Controller {
        if(!empty($_GET['action']) && !empty($_GET["id"])){
       // check if action is adding an activity
       if($_GET['action'] == 'deleteActivity'){
-// $bucketlistToDelete = Bucketlist::find($_GET['id']);
-//         $bucketlistToDelete->delete();
-//         header("Location: index.php?page=profile");
-//         exit();
           $bucketlist= Bucketlist::where("id",$_SESSION["detailBucketlist"])->first();
           $activityToDelete= $bucketlist->activities()->where("activity_id", $_GET["Activityid"])->delete();
           //$activityToDelete->delete();
