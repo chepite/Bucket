@@ -29,7 +29,7 @@
 <div class="threedotDropdown hidden">
   <ul>
     <li>                <a
-                    class="delete-link"
+                    class="delete-link delete"
                     href="index.php?page=profile&action=delete&id=<?php echo $_SESSION['detailBucketlist']; ?>"> Delete Bucketlist
                 </a></li>
   </ul>
