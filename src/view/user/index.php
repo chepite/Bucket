@@ -1,4 +1,9 @@
-<!-- search form -->
+<main>
+  <?php
+if(!empty($_SESSION['userId'])){
+echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
+}?>
+  <!-- search form -->
 <form action="index.php" class="searchform">
     <div class="formLine">
     <label for="search"></label>
@@ -13,6 +18,8 @@
 
 <div class="bucketlists">
 </div>
+
+</main>
 
 <script src="./js/search.js"></script>
 
