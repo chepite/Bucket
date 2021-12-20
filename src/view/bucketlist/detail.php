@@ -1,8 +1,3 @@
-
-
-
-
-
 <link rel="stylesheet" href="css/detail.css">
 <?php
         // de fouten weergeven: in de praktijk bij de velden zelf
@@ -14,10 +9,10 @@
         }
     ?>
 <h2><?php echo("listId ".$_SESSION["detailBucketlist"])?></h2>
-<div>    <a class="edit-link">Edit</a>
+<div class="editDiv">    <a class="edit-link">Edit</a>
 <a class="threedot">...</a>
 </div>
-<div class="editFormDiv">
+<div class="editFormDiv hidden">
   <form class="editForm" method="post">
     <input type="hidden" name="action" value="editBucketlist">
     <label for="name">Bucketlist name</label></br>
@@ -31,7 +26,7 @@
   <button type="submit" >Submit</button>
   </form>
 </div>
-<div class="threedotDropDown">
+<div class="threedotDropdown hidden">
   <ul>
     <li>                <a
                     class="delete-link"
@@ -42,15 +37,15 @@
 <ul class="activityList">
 </ul>
 <a class="addActivityLink" href="">Add new activity</a>
-<div class="addActivity">
-<form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
-<input type="hidden" name="action" value="addActivity">
-<input type="text" name="name" required placeholder="Bucketlist name" size="32"></br>
+<div class="addActivity hidden ">
+  <form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
+  <input type="hidden" name="action" value="addActivity">
+  <input type="text" name="name" required placeholder="Bucketlist name" size="32"></br>
     <input type="date" name="date" required placeholder="Bucketlist date"></br>
     <input type="text" name="place" required placeholder="Bucketlist place" size="255"></br>
     <input type="number" name="price" required placeholder="Bucketlist price" ></br>
     <input type="text" name="company" required placeholder="Bucketlist company" size="255"></br>
-  <input list="categorydatalist" id="categories" name="category" required/>
+    <input list="categorydatalist" id="categories" name="category" required/>
     <datalist  id="categorydatalist" name="categorydatalist">
             <select class="categorydatalist--list" name="categorieDataListSelect">
             <?php
@@ -60,12 +55,12 @@
           ?>
             </select>
           </datalist>
-<input type="submit" value="add new activity">
-</form>
+  <input type="submit" value="add new activity">
+  </form>
       </div>
   </br>
-<a class="addExistingAcitivityLink" href="">Add existing activity</a>
-<div class="addExistingActivity">
+<a class="addExistingAcitivityLink">Add existing activity</a>
+<div class="addExistingActivity hidden">
 <form method="post" action="index.php?page=detail&id=<?php echo($_SESSION["detailBucketlist"]);?>">
     <input type="hidden" name="action" value="addExistingActivity">
     <!--option list of activities that the user has made/liked-->

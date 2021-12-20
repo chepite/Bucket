@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+/* stylelint-disable */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* stylelint-enable */
+
+body {
+  font-family: var(--font);
+}
+
+.editDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.editDiv > a {
+  background-color: white;
+  width: 10rem;
+  height: 2rem;
+  margin: 1rem;
+  text-align: center;
+
+}
+
+.hidden {
+  display: none;
+}

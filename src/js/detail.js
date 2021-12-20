@@ -14,9 +14,6 @@
     fillList(activityData);
   };
 
-
-
-
   const handleClickDelete = (e) => {
     const confirm = window.confirm(
       "Are you sure you want to delete this bucketlist?"
@@ -27,22 +24,32 @@
     }
   };
 
-  const handleClickEdit = (e)=>{
+  const handleClickEdit = e => {
     e.preventDefault();
-    const $editFormDiv= document.querySelector(".editFormDiv")
+    const $editFormDiv = document.querySelector('.editFormDiv');
+    $editFormDiv.classList.toggle('hidden');
   }
 
+  const handleClickThreedot = (e) =>{
+    e.preventDefault();
+    const $dropdown= document.querySelector('.threedotDropdown');
+    $dropdown.classList.toggle("hidden");
+  }
 
-
-
-
-
-
+  const handleClickNew = (e) =>{
+    e.preventDefault();
+    const $addForm = document.querySelector(".addActivity");
+    $addForm.classList.toggle("hidden");
+  }
   const init = () =>{
     const $editLink = document.querySelector('.edit-link');
     $editLink.addEventListener("click", handleClickEdit);
     const $Dellink = document.querySelector(`.delete-link`);
     $Dellink.addEventListener(`click`, handleClickDelete);
+    const $threedot= document.querySelector(".threedot");
+    $threedot.addEventListener("click", handleClickThreedot);
+    const $addNew = document.querySelector(".addActivityLink");
+    $addNew.addEventListener("click", handleClickNew);
     activities();
   }
   init();
