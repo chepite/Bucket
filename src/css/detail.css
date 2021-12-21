@@ -12,20 +12,73 @@ html {
 body {
   font-family: var(--font);
 }
-
-.editDiv {
-  display: flex;
-  flex-direction: column;
+.detail__wrapper{
+  display: grid;
+  grid-template-areas:
+  "name edit dots"
+  "desc activ activ";
+  grid-template-columns: 40% 40% 20%
 }
 
-.editDiv > a {
-  background-color: white;
-  width: 10rem;
-  height: 2rem;
+.description__wrapper{
+  grid-area: "desc";
+  height: 30rem;
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 2rem;
   margin: 1rem;
+  background-color: #67FF82; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
   text-align: center;
-  border: 6px solid black;
+}
 
+.activ__wrapper li{
+  height: 30rem;
+  
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 2rem;
+  margin: 1rem;
+  background-color: #67FF82; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
+  text-align: center;
+}
+
+.activ__wrapper{
+  grid-area: "activ";
+}
+
+.editDiv{
+  grid-area: "edit";
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 3rem;
+  margin: 1rem;
+  background-color: #FF5858; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #FF5858 , #FFA5A5);
+  text-align: center;
+}
+.threedot{
+  grid-area: "dots";
+  height: 8rem;
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 3rem;
+  margin: 1rem;
+  background-color: #FF5858; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #FF5858 , #FFA5A5);
+  text-align: center;
+}
+.detail__wrapper a{
+  text-decoration: none;
+  color: black;
 }
 
 .hidden {
@@ -38,4 +91,19 @@ body {
 .deleteActivity-link {
   width: 5rem;
   height: 1.5rem;
+}
+
+.bucketlist__title{
+  grid-area: "name";
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 3rem;
+  margin: 1rem;
+  background-color: #A5D5FF; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #A5D5FF , #6EB6FF);
+  text-align: center;
+
+  
 }

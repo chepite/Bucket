@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="css/detail.css">
+<main>
+  <link rel="stylesheet" href="css/detail.css">
 <?php
         // de fouten weergeven: in de praktijk bij de velden zelf
         if(!empty($error)){
@@ -28,8 +29,23 @@
 <?php
 if(isset($_SESSION["userId"]) && $_SESSION["userId"]=== $bucketlist["user_id"]){
 echo('
-<div class="editDiv">    <a class="edit-link">Edit</a>
-<a class="threedot">...</a>
+<div class="detail__wrapper">
+  <div class="bucketlist__title">'. $bucketlist["name"] .'</div>
+  <div class="editDiv"><a class="edit-link">Edit</a></div>
+  <a class="threedot">...</a>
+  <div class="description__wrapper">
+    <p>'. $bucketlist["description"] .'</p>
+  </div>
+  <div class="activ__wrapper">
+    <ul>
+      <li>
+        activity
+      </li>
+    </ul>
+  </div>
+</div>
+
+
 </div>
 <div class="editFormDiv hidden">
   <form class="editForm" method="post">
@@ -93,3 +109,5 @@ else{
 <script src="./js/detailGuest.js"></script>');
 }
 ?>
+</main>
+
