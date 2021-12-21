@@ -1,11 +1,11 @@
 <main>
-      <form method="post" action="index.php?page=signup">
+      <form class="form__wrapper" method="post" action="index.php?page=signup">
     <input type="hidden" name="action" required value="addUser"/>
     <div class="formLine">
     <label for="username">Username</label>
     <span class="error"><?php if(!empty($errors['username'])){echo $errors['username'];};
     if(!empty($errors['tooLong'])){echo $errors['tooLong'];};?></span>
-    <input type="text"  required name="username" value="<?php
+    <input class="login__input" type="text"  required name="username" value="<?php
           if (!empty($_POST['username'])) echo $_POST['username'];
           ?>">
           </div>
@@ -13,7 +13,7 @@
     <label for="password">Password</label>
     <span class="error"><?php if(!empty($errors['password'])){echo $errors['password'];};
     if(!empty($errors['passwordLength'])){echo $errors['passwordLength'];};?></span>
-    <input type="password" name="password" required value="<?php
+    <input class="login__input" type="password" name="password" required value="<?php
           if (!empty($_POST['password'])) echo $_POST['password'];
           ?>">
           </div>
@@ -21,11 +21,11 @@
     <label for="repeatPassword">Repeat password</label>
     <span class="error"><?php if(!empty($errors['repeatPassword'])){echo $errors['repeatPassword'];};
  if(!empty($errors['password mismatch'])){echo $errors['password mismatch'];};?></span>
-    <input type="password" name="repeatPassword" required value="<?php
+    <input class="login__input" type="password" name="repeatPassword" required value="<?php
           if (!empty($_POST['repeatPassword'])) echo $_POST['repeatPassword'];
           ?>">
           </div>
-    <input type="submit">
+    <input class="button button__submit" type="submit">
 </form>
 </main>
 <script src="js/validate.js"></script>
