@@ -232,7 +232,24 @@ body {
 .footer__container .pagetitle a {
   -webkit-text-stroke: 3px black;
 }
+.main__content--wrapper{
+  margin-top: 5rem;
+}
+.main__illustration{
+  width: 40%;
+}
 
+
+
+
+
+
+
+
+
+
+
+/* responsive */
 @media(max-width: 767px){
   main{
   width: 30rem;
@@ -350,6 +367,12 @@ body {
 }
 .footer__container .pagetitle a {
   -webkit-text-stroke: 2px black;
+}
+.main__content--wrapper{
+  margin-top: 2rem;
+}
+.main__illustration{
+  width: 100%;
 }
 }
 
