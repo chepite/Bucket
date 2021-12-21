@@ -88,8 +88,8 @@ class BucketlistController extends Controller {
           if(empty($errors)){
             $user->likes()->save($newLike);
             //$newLike->save();
-           // header("Location:index.php?page=detail&id=".$_GET["id"]);
-            //exit();
+            header("Location:index.php?page=detail&id=".$_GET["id"]);
+            exit();
            }
           else{
             echo($errors);
@@ -97,8 +97,8 @@ class BucketlistController extends Controller {
         }
         else{
           $user->likes()->where("bucketlist_id", $_GET["id"])->delete();
-          echo("del");
-          echo($user->likes);
+          header("Location:index.php?page=detail&id=".$_GET["id"]);
+          exit();
         }
       }
     }
