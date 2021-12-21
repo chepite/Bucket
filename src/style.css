@@ -21,6 +21,8 @@ body {
 main{
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 5rem;
+  min-height: 60vh;
 }
 
 a{
@@ -33,6 +35,7 @@ li {
 }
 
 .container {
+  padding: 0;
   width: 100%;
   margin: var(--spacerBig) auto;
   display: flex;
@@ -116,7 +119,7 @@ body {
 .button__login:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 
@@ -133,7 +136,7 @@ body {
 .button__logout:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__profile{
@@ -149,7 +152,7 @@ body {
 .button__profile:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 
@@ -162,6 +165,7 @@ body {
   text-align: center;
 }
 .footer{
+
   border: 5px solid black;
   padding: 4rem;
   background-color: #A5FFB6; /* For browsers that do not support gradients */
@@ -247,7 +251,149 @@ body {
   height: inherit;
   border: 5px solid black;
   background-color: #A5FFF8; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
+  background-image: linear-gradient(to bottom, #6DF2E8 , #CEFFFB);
+}
+
+.CTA__content--wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CTA__title{
+  color: black;
+  font-size: 3rem;
+  margin: 0 auto;
+  margin-top:10rem;
+  text-align: center;
+  
+}
+
+.CTA__paragraph{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 40%;
+  text-align: center;
+}
+.actual__CTA{
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: fit-content;
+   padding: 1.5rem;
+   border: 5px solid black;
+   text-decoration: none;
+}
+.actual__CTA:hover{
+  background-color: black;
+  color: #A5FFF8;
+  text-decoration: none;
+}
+.button__logout--profile{
+  margin: 0 auto;
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 5px solid black;
+   margin-top: 10rem;
+}
+.button__logout--profile:hover{
+  border: 5px solid black;
+  background-color: black;
+  color: #FFFFA5;
+}
+
+.placeholder__slogan{
+  
+  height: 20rem;
+  margin-top: 5rem;
+  width: 100%;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFA2F4; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #FFA2F4 , #FF72FF);
+}
+
+.slogan{
+  color: #FFFFA5;
+  -webkit-text-stroke: 5px black;
+  font-size: 7rem;
+  text-align: center;
+}
+
+.leaderboard__wrapper{
+  margin-top: 5rem;
+  width: 100%;
+  
+}
+
+.leaderboard__title--wrapper{
+  
+  width: fit-content;
+  padding: 2rem;
+  font-size: 2.5rem;
+  padding-left: 5.5rem;
+  color:black;
+  background-color: #3898F3; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #3898F3 , #8DC7FF);
+
+  border: 5px solid black;
+}
+
+.profile__title{
+  -webkit-text-stroke: 4px black;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  color: #FF6A6A;
+  text-align: center;
+}
+.button__addBucketlist{
+  margin: 0 auto;
+  width: fit-content;
+  padding:1rem; 
+  background:#FFFFA5; 
+  border:5px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  
+}
+
+.bucketlist__wrapper{
+  margin-top: 2rem;
+  width: 100%;
+  border: 4px solid black;
+  background-color: #3898F3; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #3898F3 , #8DC7FF);
+}
+.bucketlist__wrapper a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+.bucketlist__wrapper:hover{
+  background-color: #8DC7FF; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #8DC7FF , #3898F3);
+}
+.bucketlist__name{
+  width: 15%;
+  padding: 1rem;
+  font-size: 2rem;
+  border: 4px solid black;
+  margin: 1rem;
+  background-color: #67FF82; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
+  text-align: center;
+}
+
+.bucketlist__description {
+  width: 80%;
+  font-size: 1.5rem;
+  margin: 1rem;
 }
 
 
@@ -255,10 +401,21 @@ body {
 
 
 
-
-
-
 /* responsive */
+@media(max-width: 1100px) {
+  .bucketlist__name{
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  border: 4px solid black;
+  margin: 1rem;
+  background-color: #67FF82; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
+}
+  .bucketlist__description {
+  display: none;
+}
+}
 @media(max-width: 767px){
   main{
   width: 30rem;
@@ -286,7 +443,7 @@ body {
   .search__bar{
   height: 3rem;
   width: 20rem;
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: #FFFFA5;
 }
 
@@ -318,6 +475,16 @@ body {
   font-size: 3rem;
   color: #FF6A6A;
   text-align: center;
+  margin-top: 2rem;
+}
+.profile__title{
+  -webkit-text-stroke: 2px black;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: #FF6A6A;
+  margin-top: 2rem;
+  text-align: center;
 }
 .button__login{
 
@@ -326,13 +493,13 @@ body {
    right:1rem;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__login:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__logout{
@@ -342,13 +509,13 @@ body {
    right:1rem;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__logout:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__profile{
@@ -359,13 +526,13 @@ body {
    right: auto;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__profile:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button{
@@ -389,17 +556,68 @@ body {
   margin-left: 0;
   width: 100%;
   height: 30rem;
-  border: 5px solid black;
+  border: 4px solid black;
   background-color: #A5FFF8; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
 }
+.CTA__title{
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top:8rem;
+  text-align: center;
+  
 }
+
+.CTA__paragraph{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 50%;
+  text-align: center;
+}
+.actual__CTA{
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: fit-content;
+   padding: 1rem;
+   border: 3px solid black;
+}
+.placeholder__slogan{
+  background-color: #FFA2F4; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #FFA2F4 , #FF72FF);
+  height: fit-content;
+  margin-top: 2rem;
+  width: 100%;
+  border: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.slogan{
+  color: #FFFFA5;
+  -webkit-text-stroke: 3px black;
+  font-size: 4rem;
+  text-align: center;
+}
+}
+
+
+
+
+
+
+
+
 
 @media(max-width: 320px){
   .search__bar{
   height: 3rem;
   width: 15rem;
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: #FFFFA5;
 }
   main{

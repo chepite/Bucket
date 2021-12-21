@@ -21,7 +21,28 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
   <div class="main__content--wrapper">
     <img class="main__illustration" src="./assets/buckitlayerillustration.svg" alt="responsive buck it illustration">
     <div class="CTA__wrapper">
-
+      <div class="CTA__content--wrapper">
+        <h3 class="CTA__title">Plan your future with us!</h3>
+      <p class="CTA__paragraph">With bucket, you can prepare and personalise bucket lists and start living your life</p>
+      <a href="
+      <?php 
+      if(empty($_SESSION['userId'])){
+      echo('index.php?page=login');}
+      else{echo('index.php?page=profile');} ?>" class="actual__CTA">Buck it!</a>
+      </div>
+    </div>
+  </div>
+  <div class="placeholder__slogan">
+      <p class="slogan">Buck it! Just live a little!</p>
+  </div>
+  <div class="leaderboard__wrapper">
+    <div class="leaderboard__title--wrapper"> 
+        <h4 class="leaderboard__title">
+          ...Most popular lists...
+        </h4>
+    </div>
+    <div class="leaderboard">
+    
     </div>
   </div>
   
