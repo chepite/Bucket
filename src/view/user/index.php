@@ -32,6 +32,19 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
       </div>
     </div>
   </div>
+  <div class="placeholder__slogan">
+      <p class="slogan">Buck it! Just live a little!</p>
+  </div>
+  <div class="leaderboard__wrapper">
+    <div class="leaderboard__title--wrapper"> 
+        <h4 class="leaderboard__title">
+          ...Most popular lists...
+        </h4>
+    </div>
+    <div class="leaderboard">
+    
+    </div>
+  </div>
   
 </main>
 
