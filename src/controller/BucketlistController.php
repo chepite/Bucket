@@ -12,7 +12,8 @@ class BucketlistController extends Controller {
   public function detail(){
   //find user for likes
   if(isset($_SESSION["userId"])){
-  $user= User::find($_SESSION["userId"]);}
+  $user= User::find($_SESSION["userId"]);
+}
   $bucketlist = Bucketlist::find($_GET['id']);
    $_SESSION['detailBucketlist'] = $_GET["id"];
    $categories= Category::get();
@@ -27,7 +28,7 @@ class BucketlistController extends Controller {
   //       //Bucketlist::destroy($_GET['id']);
   //     }
   //   }
-    if(isset($_SESSION["userid"])){
+    //if(isset($_SESSION["userid"])){
    if(!empty($_POST['action']) && !empty($_GET["id"])){
       if($_POST['action'] == 'editBucketlist'){
         //if checkbox isn't checked which means the playlist isn't private the post var isn't set -> workaround with function var $private
@@ -62,7 +63,7 @@ class BucketlistController extends Controller {
             header("Location:index.php?page=detail&id=".$_GET["id"]);
             exit();
           }
-
+          $this->set("error", $error);
       }
     }
        if(!empty($_GET['action']) && !empty($_GET["id"])){
@@ -103,7 +104,7 @@ class BucketlistController extends Controller {
         }
       }
     }
-    }
+    //}
     $this->set("title", "detail");
     if(isset($_SESSION["userId"])){
     $this->set("user", $user);}
