@@ -23,5 +23,7 @@ else{
 
 <ul class="bucketlistList">
 </ul>
-<a href="destroy.php">Log out</a>
+<a class="button button__logout--profile" href="destroy.php">
+          <span class="glyphicon glyphicon-log-out"></span>
+        </a>
 <script src="./js/profile.js"></script>

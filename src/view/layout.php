@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <?php echo $css; ?>
   <title>Buck it!</title>
 </head>
@@ -19,9 +20,13 @@ if(empty($_SESSION['userId'])){
 }
 else{
   if(isset($title) && $title!= "profile"){
-  echo('<br><a class="button button__profile" href="index.php?page=profile">Profile</a>
+  echo('<a class="button button__profile" href="index.php?page=profile">
+          <span class="glyphicon glyphicon-user"></span>
+        </a>
 ');}
-echo('<a class="button button__logout" href="destroy.php"> Log Out</a>
+echo('<a class="button button__logout" href="destroy.php">
+          <span class="glyphicon glyphicon-log-out"></span>
+        </a>
 ');
 }
 ?>

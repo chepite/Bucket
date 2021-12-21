@@ -33,6 +33,7 @@ li {
 }
 
 .container {
+  padding: 0;
   width: 100%;
   margin: var(--spacerBig) auto;
   display: flex;
@@ -116,7 +117,7 @@ body {
 .button__login:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 
@@ -133,7 +134,7 @@ body {
 .button__logout:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__profile{
@@ -149,7 +150,7 @@ body {
 .button__profile:hover{
   border: 5px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 
@@ -250,6 +251,56 @@ body {
   background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
 }
 
+.CTA__content--wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CTA__title{
+  font-size: 3rem;
+  margin: 0 auto;
+  margin-top:10rem;
+  text-align: center;
+  
+}
+
+.CTA__paragraph{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 40%;
+  text-align: center;
+}
+.actual__CTA{
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: fit-content;
+   padding: 1.5rem;
+   border: 5px solid black;
+}
+.actual__CTA:hover{
+  background-color: black;
+  color: #A5FFF8;
+}
+.button__logout--profile{
+   background-color: #FFFFA5;
+   padding: 1rem;
+   border: 5px solid black;
+}
+.button__Logout--profile:hover{
+  border: 5px solid black;
+  background-color: black;
+  color: #FFFFA5;
+}
+
+
+
+
+
+
 
 
 
@@ -333,7 +384,7 @@ body {
 .button__login:hover{
   border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__logout{
@@ -349,7 +400,7 @@ body {
 .button__logout:hover{
   border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button__profile{
@@ -366,7 +417,7 @@ body {
 .button__profile:hover{
   border: 4px solid black;
   background-color: black;
-  color: white;
+  color: #FFFFA5;
 
 }
 .button{
@@ -394,7 +445,39 @@ body {
   background-color: #A5FFF8; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
 }
+.CTA__title{
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top:8rem;
+  text-align: center;
+  
 }
+
+.CTA__paragraph{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 50%;
+  text-align: center;
+}
+.actual__CTA{
+  font-size: 1.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: fit-content;
+   padding: 1rem;
+   border: 3px solid black;
+}
+}
+
+
+
+
+
+
+
+
 
 @media(max-width: 320px){
   .search__bar{
