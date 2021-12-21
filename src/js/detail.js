@@ -10,10 +10,11 @@
     let url = window.location.href;
     $location.innerHTML= "";
     $location.innerHTML = data.map((activity)=>{
-      return `<li><div>${activity.name}   <a
-                    class="deleteActivity-link delete"
-                    href="${url}&action=deleteActivity&Activityid=${activity.id}"> Delete Activity
-                </a></div></li>`;}).join('');
+      return `<li>
+      <div>${activity.name}</div>
+      <div>${activity.date}</div>
+      <a class="deleteActivity-link delete" href="${url}&action=deleteActivity&Activityid=${activity.id}"> Delete Activity</a>
+      </li>`;}).join('');
   }
   const activities = async () => {
     const url = `index.php?page=detail-api&id=${id}`;

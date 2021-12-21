@@ -19,10 +19,27 @@ body {
   "desc activ activ";
   grid-template-columns: 40% 40% 20%;
 }
+.detail__wrapper--other{
+  display: grid;
+  grid-template-areas:
+  "title descr like"
+  "activ activ activ";
+}
 
 .description__wrapper{
   grid-area: "desc";
-  height: 30rem;
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 2rem;
+  margin: 1rem;
+  background-color: #67FF82; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
+  text-align: center;
+}
+.description__wrapper--other{
+  grid-area: "descr";
   padding: 2rem;
   font-size: 2rem;
   color: black;
@@ -35,15 +52,15 @@ body {
 }
 
 .activ__wrapper li{
-  height: 30rem;
+  height: fit-content;
 
   font-size: 2rem;
   color: black;
   border: 4px solid black;
   font-size: 2rem;
   margin: 1rem;
-  background-color: #67FF82; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to left, #67FF82 , #A5FFB6);
+  background-color: #CEB7FF; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #CEB7FF , #9B6EFF);
   text-align: center;
 }
 
@@ -51,7 +68,22 @@ body {
   /*grid-area: "activ";*/
   grid-area: 2 / 2 / 3 / 4;
 }
+.activ__wrapper--other li{
+  height: fit-content;
 
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 2rem;
+  margin: 1rem;
+  background-color: #CEB7FF; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #CEB7FF , #9B6EFF);
+  text-align: center;
+}
+.activ__wrapper--other{
+  /*grid-area: "activ";*/
+  grid-area: 2 / 1 / 3 / 4;
+}
 .editDiv{
   grid-area: "edit";
   padding: 2rem;
@@ -107,4 +139,21 @@ body {
   text-align: center;
 
 
+}
+.bucketlist__title--other{
+  grid-area: "title";
+  padding: 2rem;
+  font-size: 2rem;
+  color: black;
+  border: 4px solid black;
+  font-size: 3rem;
+  margin: 1rem;
+  background-color: #A5D5FF; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #A5D5FF , #6EB6FF);
+  text-align: center;
+
+
+}
+.like{
+  grid-area: "like""
 }

@@ -19,11 +19,21 @@
   //   <input type="hidden" name="action" value="like">
   //            <input class="like" type="checkbox" name="like" value="');
   echo('
+  <div class="detail__wrapper--other">
+  <div class="bucketlist__title--other">'. $bucketlist["name"] .'</div>
+  <div class="description__wrapper--other">
+    <p>'. $bucketlist["description"] .'</p>
+  </div>
+  <div class="like">
   <form class="likeForm" method="post">
     <input type="hidden" name="action" value="like">
-            ');
-            // if(!empty($user->likes->where("bucketlist_id", $_GET["id"])->first())){echo('1" checked>');}else{echo('0">');};
-    echo('<input type="submit" value="like"></form>');
+    <input class="" type="submit" value="like"></form>
+  </div>
+  <div class="activ__wrapper--other">
+    <ul class="activityList">
+    </ul>
+  </div>
+  </div>');
   }
 ?>
 <?php
@@ -37,10 +47,7 @@ echo('
     <p>'. $bucketlist["description"] .'</p>
   </div>
   <div class="activ__wrapper">
-    <ul>
-      <li>
-        activity
-      </li>
+    <ul class="activityList">
     </ul>
   </div>
 </div>
@@ -70,8 +77,7 @@ echo('
   </ul>
 </div>
 ');}?>
-<ul class="activityList">
-</ul>
+
 <?php
 if(isset($_SESSION["userId"]) && $_SESSION['userId']=== $bucketlist["user_id"]){
 echo('
