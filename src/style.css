@@ -286,7 +286,7 @@ body {
   .search__bar{
   height: 3rem;
   width: 20rem;
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: #FFFFA5;
 }
 
@@ -318,6 +318,7 @@ body {
   font-size: 3rem;
   color: #FF6A6A;
   text-align: center;
+  margin-top: 2rem;
 }
 .button__login{
 
@@ -326,11 +327,11 @@ body {
    right:1rem;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__login:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
   color: white;
 
@@ -342,11 +343,11 @@ body {
    right:1rem;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__logout:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
   color: white;
 
@@ -359,11 +360,11 @@ body {
    right: auto;
    background-color: #FFFFA5;
    padding: 1rem;
-   border: 2px solid black;
+   border: 4px solid black;
 
 }
 .button__profile:hover{
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: black;
   color: white;
 
@@ -389,7 +390,7 @@ body {
   margin-left: 0;
   width: 100%;
   height: 30rem;
-  border: 5px solid black;
+  border: 4px solid black;
   background-color: #A5FFF8; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
 }
@@ -399,7 +400,7 @@ body {
   .search__bar{
   height: 3rem;
   width: 15rem;
-  border: 2px solid black;
+  border: 4px solid black;
   background-color: #FFFFA5;
 }
   main{
