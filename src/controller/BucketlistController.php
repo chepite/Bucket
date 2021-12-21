@@ -73,7 +73,7 @@ class BucketlistController extends Controller {
         }
       }
       }
-    }
+
        if(!empty($_GET['action']) && !empty($_GET["id"])){
       // check if action is adding an activity
       if($_GET['action'] == 'deleteActivity'){
@@ -150,7 +150,7 @@ class BucketlistController extends Controller {
          return ['result' => 'error', 'data' => $errors];
           }
   }
-  }
+  
 
 
 
