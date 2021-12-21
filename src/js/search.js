@@ -14,11 +14,13 @@
       .map(bucketlist => {
         return `
         <li>
-          <article class="bucketlist">
-
-          <h2 class="bucketlist_name"><a href="index.php?page=detail&id=${bucketlist.id}">${bucketlist.name}</a></h2>
-          </article>
-        </li>
+        <div class="bucketlist__wrapper">
+          <a href="index.php?page=detail&id=${bucketlist.id}">
+            <div class="bucketlist__name">${bucketlist.name}</div>
+            <div class="bucketlist__description"><p>Description:</p>${bucketlist.description}</div>
+          </a>
+        </div>
+      </li>
       `;
       })
       .join(``);

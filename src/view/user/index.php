@@ -5,7 +5,7 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
 }?>
   <!-- search form -->
 <form action="index.php" class="searchform">
-    <div class="formLine">
+    <div class="formLine search">
     <label for="search"></label>
     <input class="search__bar" type="text" placeholder="Looking for new lists?" required name="searchtext" value="<?php
           if (!empty($_GET['searchtext'])) echo $_GET['searchtext'];?>">

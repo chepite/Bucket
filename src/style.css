@@ -63,7 +63,7 @@ li {
 
 body {
   background-color: var(--colorYellow);
-  background-image: url(assets/gridbackground.png);
+  background-image: url(assets/gridbackground.svg);
 
   background-repeat: repeat;
   background-size: cover;
@@ -93,12 +93,35 @@ body {
 .search__bar::placeholder{
   font-size: 2rem;
 }
+.form__wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
 .formLine{
+  margin: 0 auto;
   margin-top: 1rem;
+
+}
+.search{
   display: flex;
   justify-content: center;
-  width: 100%;
+}
+input, span, label{
+  display: block;
+}
+.error{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 900;
+  margin: 0 auto;
+
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  max-width: 80%;
+  padding: 0.5rem;
+  
 }
 
 .hidden{
@@ -396,6 +419,51 @@ body {
   margin: 1rem;
 }
 
+.login__input{
+  border: 4px solid black;
+  background-color: #FFFFA5;
+  width: 80%;
+  height: 4rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+  margin: 0 auto;
+  color: black;
+
+}
+label{
+  text-align: center;
+  font-size: 3rem;
+  color: #FFFFA5;
+  -webkit-text-stroke: 2px black;
+}
+.button__submit{
+  color: black;
+  background-color: #FFFFA5;
+  border: 4px solid black;
+  width: fit-content;
+  padding: 1rem;
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.button__submit:hover{
+  color: #FFFFA5;
+  background-color: black;
+  
+}
+
+.signup__CTA{
+  width: fit-content;
+  border: 4px solid black;
+  background-color: #6DF2E8;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+
+
 
 
 
@@ -602,6 +670,33 @@ body {
   -webkit-text-stroke: 3px black;
   font-size: 4rem;
   text-align: center;
+}
+  .button__submit{
+  color: black;
+  background-color: #FFFFA5;
+  border: 4px solid black;
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.leaderboard__title--wrapper{
+  
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1.5rem;
+  padding-left: 4rem;
+  color:black;
+  background-color: #3898F3; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #3898F3 , #8DC7FF);
+
+  border: 5px solid black;
+}
+.leaderboard__wrapper{
+  margin-top: 2rem;
+  width: 100%;
+  
 }
 }
 
