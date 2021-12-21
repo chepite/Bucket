@@ -18,6 +18,12 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
 
 <div class="bucketlists">
 </div>
+  <div class="main__content--wrapper">
+    <img class="main__illustration" src="./assets/buckitlayerillustration.svg" alt="responsive buck it illustration">
+    <div class="CTA__wrapper">
+
+    </div>
+  </div>
   
 </main>
 
