@@ -8,11 +8,12 @@
     submitWithJS();
   };
 
-  const updateList = bucketlists => {
-    const $shows = document.querySelector(".bucketlists");
-    $shows.innerHTML = bucketlists
-      .map(bucketlist => {
-        return `
+  const updateList = (bucketlists) => {
+    const $bucketlists = document.querySelector(".bucketlists");
+    if (bucketlists.length !== 0) {
+      $bucketlists.innerHTML = bucketlists
+        .map(bucketlist => {
+          return `
         <li>
         <div class="bucketlist__wrapper">
           <a href="index.php?page=detail&id=${bucketlist.id}">
@@ -22,8 +23,11 @@
         </div>
       </li>
       `;
-      })
-      .join(``);
+        })
+        .join(``);
+    } else {
+      $bucketlists.innerHTML = '<div class="noListsFound"><p>No Bucketlist found</p><div>';
+    }
   };
 
   const submitWithJS = async () => {

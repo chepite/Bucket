@@ -57,8 +57,6 @@
   const initCreateActivityForm = () => {
     $createActivityForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      // display as loading
-      $createActivityForm.classList.add("form--loading");
       // get the id from the querystring
       const params = new URLSearchParams(window.location.search);
       const response = await fetch(
@@ -74,8 +72,6 @@
         //const $rating = document.querySelector(".ratings__header");
         //$rating.textContent = `RATING (${movie.avgRating}/5 avg)`;
       }
-      // remove loading display
-     //$createActivityForm.classList.remove("form--loading");
     });
   };
 
