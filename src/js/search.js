@@ -33,11 +33,9 @@
     console.log("querystring", qs);
     const url = `index.php?page=search-api&${qs}`;
     console.log("url", url);
-
     const response = await fetch(url);
     const bucketlists = await response.json();
     updateList(bucketlists);
-
     window.history.pushState({}, "", `index.php?page=home&${qs}`);
   };
 

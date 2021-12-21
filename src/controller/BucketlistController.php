@@ -4,10 +4,14 @@ require_once __DIR__ . '/../model/User.php';
 require_once __DIR__.'/../model/Bucketlist.php';
 require_once __DIR__.'/../model/Activity.php';
 require_once __DIR__.'/../model/Category.php';
+require_once __DIR__.'/../model/Like.php';
+
 
 class BucketlistController extends Controller {
 
   public function detail(){
+  //find user for likes
+  $user= User::find($_SESSION["userId"]);
   $bucketlist = Bucketlist::find($_GET['id']);
    $_SESSION['detailBucketlist'] = $_GET["id"];
    $categories= Category::get();
@@ -70,6 +74,36 @@ class BucketlistController extends Controller {
           exit();
       }
     }
+    //liking bucketlists
+    if(!empty($_POST['action']) && !empty($_GET["id"])){
+      // check if action is liking
+      if($_POST['action'] == "like"){
+        $like= $user->likes()->where("bucketlist_id", $_GET["id"])->first();
+        if($like === null){
+          $newLike= new Like();
+          $newLike->user_id= $_SESSION["userId"];
+          $newLike->bucketlist_id= $_GET["id"];
+          $errors= Like::validate($newLike);
+
+          if(empty($errors)){
+            $user->likes()->save($newLike);
+            //$newLike->save();
+           // header("Location:index.php?page=detail&id=".$_GET["id"]);
+            //exit();
+           }
+          else{
+            echo($errors);
+          }
+        }
+        else{
+          $user->likes()->where("bucketlist_id", $_GET["id"])->delete();
+          echo("del");
+          echo($user->likes);
+        }
+      }
+    }
+    $this->set("title", "detail");
+    $this->set("user", $user);
   $this->set("bucketlist", $bucketlist);
      $this->set("categories", $categories);
 
@@ -84,5 +118,6 @@ class BucketlistController extends Controller {
   public function addActivity(){
 
   }
+
 }
 ?>

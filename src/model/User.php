@@ -9,6 +9,9 @@ class User extends Model {
   public function bucketlist(){
     return $this->hasMany(Bucketlist::class);
   }
+  public function likes(){
+    return $this->hasMany(Like::class);
+  }
 
   public static function validatesignup($data){
     $errors = [];
