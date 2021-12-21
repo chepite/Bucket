@@ -10,7 +10,6 @@
     ?>
  <h2 class="idvalue hidden"><?php echo($_SESSION["detailBucketlist"])?></h2>
  <?php
- echo($user->likes()->where("bucketlist_id", $_GET["id"])->first());
  //echo($user->likes->contains(Bucketlist::find($_GET["id"])));
   //likes, als de user hem geliked heeft checkbox = checked anders unchecked, submit moet met js gebeuren op eventlistener change
   if(isset($_SESSION["userId"]) && $_SESSION["userId"] != $bucketlist["user_id"]){
@@ -27,7 +26,7 @@
   }
 ?>
 <?php
-if($_SESSION["userId"]=== $bucketlist["user_id"]){
+if(isset($_SESSION["userId"]) && $_SESSION["userId"]=== $bucketlist["user_id"]){
 echo('
 <div class="editDiv">    <a class="edit-link">Edit</a>
 <a class="threedot">...</a>
@@ -58,7 +57,7 @@ echo('
 <ul class="activityList">
 </ul>
 <?php
-if($_SESSION['userId']=== $bucketlist["user_id"]){
+if(isset($_SESSION["userId"]) && $_SESSION['userId']=== $bucketlist["user_id"]){
 echo('
 <a class="addActivityLink" href="">Add new activity</a>
 <div class="addActivity hidden ">
