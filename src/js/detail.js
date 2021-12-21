@@ -1,10 +1,11 @@
 {
   let activityData;
-
+  let id;
   const fillList =(data)=>{
     const $location = document.querySelector(".activityList");
     //add button for delete in this li
     let url = window.location.href;
+    $location.innerHTML= "";
     $location.innerHTML = data.map((activity)=>{
       return `<li><div>${activity.name}   <a
                     class="deleteActivity-link delete"
@@ -12,7 +13,7 @@
                 </a></div></li>`;}).join('');
   }
   const activities = async () => {
-    const url = "index.php?page=detail-api";
+    const url = `index.php?page=detail-api&id=${id}`;
     const response = await fetch(url);
     activityData = await response.json();
     fillList(activityData);
@@ -46,6 +47,7 @@
     $addForm.classList.toggle("hidden");
   }
   const init = () =>{
+    id = document.querySelector(".idvalue").textContent;
     const $editLink = document.querySelector('.edit-link');
     $editLink.addEventListener("click", handleClickEdit);
     const $Dellink = document.querySelector(`.delete-link`);

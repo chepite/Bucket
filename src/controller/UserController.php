@@ -69,9 +69,6 @@ class UserController extends Controller {
                 if (!empty($tryingUser)) {
                     // if ($tryingUser->password == $_POST['password']) {
                         if (password_verify($_POST['password'],$tryingUser->password)) {
-
-                        //check for update streak
-                        //$this->_updateStreak($tryingUser);
                         $_SESSION["loggedin"] = true;
                         $_SESSION["username"] = $tryingUser->username;
                         $_SESSION["userId"] = $tryingUser->id;

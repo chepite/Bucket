@@ -63,10 +63,10 @@ class BucketlistController extends Controller {
        if(!empty($_GET['action']) && !empty($_GET["id"])){
       // check if action is adding an activity
       if($_GET['action'] == 'deleteActivity'){
-          $bucketlist= Bucketlist::where("id",$_SESSION["detailBucketlist"])->first();
+          $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
           $activityToDelete= $bucketlist->activities()->where("activity_id", $_GET["Activityid"])->delete();
           //$activityToDelete->delete();
-          header("Location:index.php?page=detail&id=".$_SESSION["detailBucketlist"]);
+          header("Location:index.php?page=detail&id=".$_GET["id"]);
           exit();
       }
     }
@@ -76,7 +76,7 @@ class BucketlistController extends Controller {
   }
 
   public function detailApi(){
-    $activities = Bucketlist::where("id", $_SESSION["detailBucketlist"])->first()->activities;
+    $activities = Bucketlist::where("id", $_GET["id"])->first()->activities;
     echo $activities->toJson();
     exit();
   }

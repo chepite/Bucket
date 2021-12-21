@@ -15,7 +15,8 @@
         return `
         <li>
           <article class="bucketlist">
-          <h2 class="bucketlist_name">${bucketlist.name}</h2>
+
+          <h2 class="bucketlist_name"><a href="index.php?page=detail&id=${bucketlist.id}">${bucketlist.name}</a></h2>
           </article>
         </li>
       `;
