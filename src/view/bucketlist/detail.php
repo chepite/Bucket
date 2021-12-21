@@ -61,7 +61,7 @@ if(isset($_SESSION["userId"]) && $_SESSION['userId']=== $bucketlist["user_id"]){
 echo('
 <a class="addActivityLink" href="">Add new activity</a>
 <div class="addActivity hidden ">
-  <form method="post" action="index.php?page=detail&id='. $_SESSION["detailBucketlist"].'">
+  <form id="addActivityForm" method="post" action="index.php?page=detail&id='. $_SESSION["detailBucketlist"].'">
   <input type="hidden" name="action" value="addActivity">
   <input type="text" name="name" required placeholder="Bucketlist name" size="32"></br>
     <input type="date" name="date" required placeholder="Bucketlist date"></br>
