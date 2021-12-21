@@ -24,7 +24,11 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
       <div class="CTA__content--wrapper">
         <h3 class="CTA__title">Plan your future with us!</h3>
       <p class="CTA__paragraph">With bucket, you can prepare and personalise bucket lists and start living your life</p>
-      <a href="" class="actual__CTA">Buck it!</a>
+      <a href="
+      <?php 
+      if(empty($_SESSION['userId'])){
+      echo('index.php?page=login');}
+      else{echo('index.php?page=profile');} ?>" class="actual__CTA">Buck it!</a>
       </div>
     </div>
   </div>

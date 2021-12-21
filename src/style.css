@@ -248,7 +248,7 @@ body {
   height: inherit;
   border: 5px solid black;
   background-color: #A5FFF8; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to right, #A5FFF8 , #CEFFFB);
+  background-image: linear-gradient(to bottom, #6DF2E8 , #CEFFFB);
 }
 
 .CTA__content--wrapper{
@@ -258,6 +258,7 @@ body {
 }
 
 .CTA__title{
+  color: black;
   font-size: 3rem;
   margin: 0 auto;
   margin-top:10rem;
@@ -280,10 +281,12 @@ body {
   width: fit-content;
    padding: 1.5rem;
    border: 5px solid black;
+   text-decoration: none;
 }
 .actual__CTA:hover{
   background-color: black;
   color: #A5FFF8;
+  text-decoration: none;
 }
 .button__logout--profile{
    background-color: #FFFFA5;
