@@ -1,4 +1,5 @@
-<form method="post" action="index.php?page=signup">
+<main>
+      <form method="post" action="index.php?page=signup">
     <input type="hidden" name="action" required value="addUser"/>
     <div class="formLine">
     <label for="username">Username</label>
@@ -26,4 +27,5 @@
           </div>
     <input type="submit">
 </form>
+</main>
 <script src="js/validate.js"></script>
