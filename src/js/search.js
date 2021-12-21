@@ -1,4 +1,5 @@
 {
+  let search;
   const handleSubmitForm = (e) => {
     e.preventDefault();
     submitWithJS();
@@ -9,11 +10,14 @@
   };
 
   const updateList = (bucketlists) => {
-    const $bucketlists = document.querySelector(".bucketlists");
-    if (bucketlists.length !== 0) {
-      $bucketlists.innerHTML = bucketlists
-        .map(bucketlist => {
-          return `
+    console.log(search);
+    const $bucketlists = document.querySelector('.bucketlists');
+    $bucketlists.innerHTML = '';
+    if (search!== "index.php?page=search-api&searchtext=") {
+      if (bucketlists.length !== 0) {
+        $bucketlists.innerHTML = bucketlists
+          .map((bucketlist) => {
+            return `
         <li>
         <div class="bucketlist__wrapper">
           <a href="index.php?page=detail&id=${bucketlist.id}">
@@ -23,10 +27,16 @@
         </div>
       </li>
       `;
-        })
-        .join(``);
-    } else {
-      $bucketlists.innerHTML = '<div class="noListsFound"><p>No Bucketlist found</p><div>';
+          })
+          .join(``);
+      } else {
+        $bucketlists.innerHTML =
+          '<div class="noListsFound"><p>No Bucketlist found</p><div>';
+      }
+    }
+    else{
+      $bucketlists.innerHTML =
+        '<div class="noListsFound"><p>No Bucketlist found</p><div>';
     }
   };
 
@@ -39,6 +49,7 @@
     console.log("querystring", qs);
     const url = `index.php?page=search-api&${qs}`;
     console.log("url", url);
+    search= url;
     const response = await fetch(url);
     const bucketlists = await response.json();
     updateList(bucketlists);
