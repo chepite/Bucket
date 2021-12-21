@@ -44,19 +44,7 @@ echo('<a class="button button__logout" href="destroy.php">
       <div class="footer__column">
         <h4>
           <a href="index.php?page=profile">Profile</a>
-        </h4>
-        <ul>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-          <li><p>bucket lists here</p></li>
-
-        </ul>
+</h4>
       </div>
       <div class="footer__column">
         <h4>

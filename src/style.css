@@ -22,6 +22,7 @@ main{
   width: 80%;
   margin: 0 auto;
   margin-bottom: 5rem;
+  min-height: 60vh;
 }
 
 a{
@@ -164,6 +165,7 @@ body {
   text-align: center;
 }
 .footer{
+
   border: 5px solid black;
   padding: 4rem;
   background-color: #A5FFB6; /* For browsers that do not support gradients */

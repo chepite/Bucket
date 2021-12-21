@@ -1,4 +1,5 @@
-<form name="login" method="post" action="index.php?page=login">
+<main>
+  <form name="login" method="post" action="index.php?page=login">
 <input type="hidden" name="action" value="login" />
         <div class="formLine">
         <label for="username">Username</label>
@@ -23,6 +24,9 @@
             <p class="signup__text">Don't have an account yet? <a href="index.php?page=signup"><u>Sign Up</u><a></p>
          </div>
          <span class="error"><?php if (!empty($errors['text'])) echo $errors['text']; ?></span>
+
+
+</main>
 
          <script src="js/validate.js"></script>
 
