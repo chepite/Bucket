@@ -460,8 +460,17 @@ label{
   padding: 1rem;
   margin-top: 2rem;
 }
-
-
+.leaderboard{
+  padding: 1rem;
+  margin-top: 5rem;
+  width: 100%;
+  height: fit-content;
+  border: 5px solid black;
+}
+.placement__wrapper{
+  margin: 1rem;
+  font-size: 5rem;
+}
 
 
 
@@ -484,6 +493,13 @@ label{
   display: none;
 }
 }
+
+
+
+
+
+
+
 @media(max-width: 767px){
   main{
   width: 30rem;

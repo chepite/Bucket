@@ -42,16 +42,37 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
         </h4>
     </div>
     <div class="leaderboard">
-    <?php
+        <?php
     if(isset($popular[0])){
-      echo('<h2>first:'.$popular[0].'</h2>');}
+      echo(`
+        <div class="placement__wrapper">
+          <a href="index.php?page=detail&id=`. $popular[0]->id .`">
+            <div class="placement"><p>1st</p></div>
+            <div class="placement__name">` . $popular[0]->name . `</div>
+            <div class="placement__description"><p>Description:</p>`. $popular[0]->description .`</div>
+          </a>
+        </div>`);}
       if(isset($popular[1])){
-      echo('<h2>second:'.$popular[1].'</h2>');}
+      echo(`
+        <div class="placement__wrapper">
+          <a href="index.php?page=detail&id=`. $popular[1]->id .`">
+            <div class="placement"><p>2nd</p></div>
+            <div class="placement__name">` . $popular[1]->name . `</div>
+            <div class="placement__description"><p>Description:</p>`. $popular[1]->description .`</div>
+          </a>
+        </div>`);}
       if(isset($popular[2])){
-      echo('<h2>third:'.$popular[2].'</h2>');}
+      echo(`
+        <div class="placement__wrapper">
+          <a href="index.php?page=detail&id=`. $popular[2]->id .`">
+            <div class="placement"><p>3rd</p></div>
+            <div class="placement__name">` . $popular[2]->name . `</div>
+            <div class="placement__description"><p>Description:</p>`. $popular[2]->description .`</div>
+          </a>
+        </div>`);}
     ?>
+    
 
-    </div>
   </div>
 
 </main>
