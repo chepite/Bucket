@@ -47,7 +47,7 @@
     e.preventDefault();
     const $dropdown = document.querySelector('.threedotDropdown');
     const $threedotLink = document.querySelector('.threedot__link');
-    $dropdown.classList.toggle('hidden')
+    $dropdown.classList.toggle('hidden');
     $threedotLink.classList.toggle('hidden');
   };
 
@@ -95,9 +95,9 @@
     $editLink.addEventListener('click', handleClickEdit);
     const $Dellink = document.querySelector(`.delete-link`);
     $Dellink.addEventListener(`click`, handleClickDelete);
-    const $threedot= document.querySelector(".threedot");
+    const $threedot = document.querySelector('.threedot');
     $threedot.addEventListener('click', handleClickThreedot);
-    const $addNew = document.querySelector(".addActivityLink");
+    const $addNew = document.querySelector('.addActivityLink');
     $addNew.addEventListener('click', handleClickNew);
     activities();
   };

@@ -1,16 +1,15 @@
 {
   let activityData;
   let id;
-  const fillList = (data) => {
-    const $location = document.querySelector(".activityList");
+  const fillList = data => {
+    const $location = document.querySelector('.activityList');
     //add button for delete in this li
-    let url = window.location.href;
-    $location.innerHTML = "";
+    $location.innerHTML = '';
     $location.innerHTML = data
-      .map((activity) => {
+      .map(activity => {
         return `<li><div>${activity.name} </div></li>`;
       })
-      .join("");
+      .join('');
   };
   const activities = async () => {
     const url = `index.php?page=detail-api&id=${id}`;
@@ -20,8 +19,7 @@
   };
 
   const init = () => {
-    const $like = document.querySelector(".like");
-    id = document.querySelector(".idvalue").textContent;
+    id = document.querySelector('.idvalue').textContent;
 
     activities();
   };

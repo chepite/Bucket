@@ -1,22 +1,22 @@
 {
   let search;
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = e => {
     e.preventDefault();
     submitWithJS();
   };
 
-  const handleInputField = (e) => {
+  const handleInputField = e => {
     submitWithJS();
   };
 
-  const updateList = (bucketlists) => {
+  const updateList = bucketlists => {
     console.log(search);
     const $bucketlists = document.querySelector('.bucketlists');
     $bucketlists.innerHTML = '';
-    if (search!== "index.php?page=search-api&searchtext=") {
+    if (search !== 'index.php?page=search-api&searchtext=') {
       if (bucketlists.length !== 0) {
         $bucketlists.innerHTML = bucketlists
-          .map((bucketlist) => {
+          .map(bucketlist => {
             return `
         <li>
         <div class="bucketlist__wrapper">
@@ -34,36 +34,33 @@
           '<div class="noListsFound"><p>No Bucketlist found</p><div>';
       }
     }
-    else{
+    else {
       $bucketlists.innerHTML =
         '<div class="noListsFound"><p>No Bucketlist found</p><div>';
     }
   };
 
   const submitWithJS = async () => {
-    const $form = document.querySelector(".searchform");
+    const $form = document.querySelector('.searchform');
     const data = new FormData($form);
     const entries = [...data.entries()];
-    console.log("entries:", entries);
     const qs = new URLSearchParams(entries).toString();
-    console.log("querystring", qs);
     const url = `index.php?page=search-api&${qs}`;
-    console.log("url", url);
-    search= url;
+    search = url;
     const response = await fetch(url);
     const bucketlists = await response.json();
     updateList(bucketlists);
-    window.history.pushState({}, "", `index.php?page=home&${qs}`);
+    window.history.pushState({}, '', `index.php?page=home&${qs}`);
   };
 
   const init = () => {
-    document.documentElement.classList.add("has-js");
+    document.documentElement.classList.add('has-js');
     document
-      .querySelectorAll(".formLine")
-      .forEach(($field) => $field.addEventListener("input", handleInputField));
+      .querySelectorAll('.formLine')
+      .forEach($field => $field.addEventListener('input', handleInputField));
     document
-      .querySelector(".searchform")
-      .addEventListener("submit", handleSubmitForm);
+      .querySelector('.searchform')
+      .addEventListener('submit', handleSubmitForm);
   };
   init();
 }
