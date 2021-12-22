@@ -1,7 +1,15 @@
 <?php
 session_start();
-ini_set('display_errors', true);
-error_reporting(E_ALL);
+// ini_set('display_errors', true);
+// error_reporting(E_ALL);
+if (basename(dirname(dirname(__FILE__))) != 'src') {
+  // do not show warnings or errors in production mode
+  ini_set('display_errors', false);
+}else{
+  // show everything in development mode
+  ini_set('display_errors', true);
+  error_reporting(E_ALL);
+}
 
 // parsing the .env file if available
 // convert content to key / value pairs
