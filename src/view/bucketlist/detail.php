@@ -13,7 +13,7 @@
  <?php
  //echo($user->likes->contains(Bucketlist::find($_GET["id"])));
   //likes, als de user hem geliked heeft checkbox = checked anders unchecked, submit moet met js gebeuren op eventlistener change
-  if(isset($_SESSION["userId"]) && $_SESSION["userId"] != $bucketlist["user_id"]){
+  if(!isset($_SESSION["userId"]) || $_SESSION["userId"] != $bucketlist["user_id"]){
   // echo('
   // <form class="likeForm" method="post">
   //   <input type="hidden" name="action" value="like">
