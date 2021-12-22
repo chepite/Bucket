@@ -33,10 +33,10 @@ $routes = array(
     'controller' => 'User',
     'action' => 'searchApi'
 ),
-'api-add-activity' => array(
-    'controller' => 'Bucketlist',
-    'action' => 'AddActivityApi'
-),
+// 'api-add-activity' => array(
+//     'controller' => 'Bucketlist',
+//     'action' => 'AddActivityApi'
+// ),
 );
 
 if(empty($_GET['page'])) {

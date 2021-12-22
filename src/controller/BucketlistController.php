@@ -49,28 +49,28 @@ class BucketlistController extends Controller {
     if(!empty($_POST['action']) && !empty($_GET["id"])){
       // check if action is adding an activity
       if($_POST['action'] == 'addActivity'){
-        // $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
-        //   $activity = new Activity();
-        //   $activity->name= $_POST["name"];
-        //   $activity->date= $_POST["date"];
-        //   $activity->place= $_POST["place"];
-        //   $activity->price= $_POST["price"];
-        //   $activity->company= $_POST["company"];
-        //   $activity->category_id= $_POST["category"];
-        //   $error= Activity::validate($activity);
-        //   if(empty($error)){
-        //     $bucketlist->activities()->save($activity);
-        //     header("Location:index.php?page=detail&id=".$_GET["id"]);
-        //     exit();
-        //   }
-        //   $this->set("error", $error);
-        $result = $this->_handleInsertActivity();
-        if ($result['result'] == 'ok') {
+        $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
+          $activity = new Activity();
+          $activity->name= $_POST["name"];
+          $activity->date= $_POST["date"];
+          $activity->place= $_POST["place"];
+          $activity->price= $_POST["price"];
+          $activity->company= $_POST["company"];
+          $activity->category_id= $_POST["category"];
+          $error= Activity::validate($activity);
+          if(empty($error)){
+            $bucketlist->activities()->save($activity);
             header("Location:index.php?page=detail&id=".$_GET["id"]);
-             exit();
-        } else {
-          $this->set('errors', $result['data']);
-        }
+            exit();
+          }
+          $this->set("error", $error);
+        // $result = $this->_handleInsertActivity();
+        // if ($result['result'] == 'ok') {
+        //     header("Location:index.php?page=detail&id=".$_GET["id"]);
+        //      exit();
+        // } else {
+        //   $this->set('errors', $result['data']);
+        // }
       }
       }
 
@@ -127,30 +127,30 @@ class BucketlistController extends Controller {
     exit();
   }
 
-  public function addActivityApi(){
-    $result = $this->_handleInsertActivity();
-    echo json_encode($result);
-    exit();
-  }
+  // public function addActivityApi(){
+  //   $result = $this->_handleInsertActivity();
+  //   echo json_encode($result);
+  //   exit();
+  // }
 
-  private function _handleInsertActivity(){
-    $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
-          $activity = new Activity();
-          $activity->name= $_POST["name"];
-          $activity->date= $_POST["date"];
-          $activity->place= $_POST["place"];
-          $activity->price= $_POST["price"];
-          $activity->company= $_POST["company"];
-          $activity->category_id= $_POST["category"];
-          $errors= Activity::validate($activity);
-          if (empty($errors)) {
-            $bucketlist->activities()->save($activity);
-          return ['result' => 'ok', 'data' => $newTodo->toArray()];
-        } else {
-         return ['result' => 'error', 'data' => $errors];
-          }
-  }
-  
+  // private function _handleInsertActivity(){
+  //   $bucketlist= Bucketlist::where("id",$_GET["id"])->first();
+  //         $activity = new Activity();
+  //         $activity->name= $_POST["name"];
+  //         $activity->date= $_POST["date"];
+  //         $activity->place= $_POST["place"];
+  //         $activity->price= $_POST["price"];
+  //         $activity->company= $_POST["company"];
+  //         $activity->category_id= $_POST["category"];
+  //         $errors= Activity::validate($activity);
+  //         if (empty($errors)) {
+  //           $bucketlist->activities()->save($activity);
+  //         return ['result' => 'ok', 'data' => $newTodo->toArray()];
+  //       } else {
+  //        return ['result' => 'error', 'data' => $errors];
+  //         }
+  // }
+
 
 
 

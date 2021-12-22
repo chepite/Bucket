@@ -1,8 +1,8 @@
 {
   let activityData;
   let id;
-  const $createActivityForm = document.querySelector('#addActivityForm');
-  const $activitiesList = document.querySelector('.activityList');
+  // const $createActivityForm = document.querySelector('#addActivityForm');
+  // const $activitiesList = document.querySelector('.activityList');
 
   const fillList = data => {
     const $location = document.querySelector('.activityList');
@@ -55,26 +55,26 @@
   };
 
   //add activities with api
-  const initCreateActivityForm = () => {
-    $createActivityForm.addEventListener('submit', async e => {
-      e.preventDefault();
-      // get the id from the querystring
-      const params = new URLSearchParams(window.location.search);
-      const response = await fetch(
-        `index.php?page=api-create-rating&id=${params.get('id')}`,
-        {
-          method: 'post',
-          body: new FormData($createActivityForm),
-        }
-      );
-      const parsedResponse = await response.json();
-      if (parsedResponse.result === 'ok') {
-        const activity = parsedResponse.data;
-        //const $rating = document.querySelector(".ratings__header");
-        //$rating.textContent = `RATING (${movie.avgRating}/5 avg)`;
-      }
-    });
-  };
+  // const initCreateActivityForm = () => {
+  //   $createActivityForm.addEventListener('submit', async e => {
+  //     e.preventDefault();
+  //     // get the id from the querystring
+  //     const params = new URLSearchParams(window.location.search);
+  //     const response = await fetch(
+  //       `index.php?page=api-create-rating&id=${params.get('id')}`,
+  //       {
+  //         method: 'post',
+  //         body: new FormData($createActivityForm),
+  //       }
+  //     );
+  //     const parsedResponse = await response.json();
+  //     if (parsedResponse.result === 'ok') {
+  //       const activity = parsedResponse.data;
+  //       //const $rating = document.querySelector(".ratings__header");
+  //       //$rating.textContent = `RATING (${movie.avgRating}/5 avg)`;
+  //     }
+  //   });
+  // };
 
 
 
@@ -83,9 +83,9 @@
 
   const init = () => {
     //add activities with api
-    if ($createActivityForm) {
-      initCreateActivityForm();
-    }
+    // if ($createActivityForm) {
+    //   initCreateActivityForm();
+    // }
     //end add api
     id = document.querySelector('.idvalue').textContent;
     const $editLink = document.querySelector('.edit-link');
