@@ -502,7 +502,23 @@ label{
   border: 5px solid black;
   padding: 0.5rem;
 }
-
+.addDesc{
+  width: 40%;
+  margin: 0 auto;
+  background-color: #6DF2E8;
+  border: 5px solid black;
+  padding: 1.5rem;
+}
+.addTitle{
+  width: 30%;
+  margin: 0 auto;
+  background-color: #6DF2E8;
+  border: 5px solid black;
+  padding: 1rem;
+}
+.addPrivacy{
+  width: 2rem;
+}
 .activity__name{
   font-size: 3rem;
 }
@@ -513,6 +529,27 @@ label{
   font-size: 1.5rem;
   margin: 0 auto;
 }
+.editFormDiv{
+  width: 100%;
+  background-color: #fd795b; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #fd795b , #fe9a84);
+  border: 5px solid black;
+  margin-bottom: 5rem;
+}
+.editForm{
+  padding: 2rem;
+}
+.editForm input{
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.editForm label{
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+
+
 
 
 

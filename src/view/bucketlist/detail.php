@@ -27,7 +27,7 @@
   <div class="like">
   <form class="likeForm" method="post">
     <input type="hidden" name="action" value="like">
-    <input class="" type="submit" value="like"></form>
+    <input class="button button__submit" type="submit" value="like"></form>
   </div>
   <div class="activ__wrapper--other">
     <ul class="activityList">
@@ -96,17 +96,18 @@ echo('
   <form class="editForm" method="post">
     <input type="hidden" name="action" value="editBucketlist">
     <label for="name">Bucketlist name</label></br>
-    <input type="text" name="name" required placeholder="Bucketlist Name" size="32" value="'. $bucketlist["name"] .'"></br>
+    <input class="addTitle"type="text" name="name" required placeholder="Bucketlist Name" size="32" value="'. $bucketlist["name"] .'"></br>
     <label for="description">Bucketlist description</label>
-    <input type="text" name="description" required placeholder="Bucketlist description" size="255" value="'. $bucketlist["description"] .'">
+    <input class="addDesc"type="text" name="description" required placeholder="Bucketlist description" size="255" value="'. $bucketlist["description"] .'">
     <label for="isPrivate">Make bucketlist private</label></br>
-    <input type="checkbox" name="isPrivate" value="'); if($bucketlist->isPrivate == 1){echo('0"');}else{echo('1"');}if($bucketlist->isPrivate == 1){echo("checked>");}else{echo(">");}
+    <input class="addPrivacy" type="checkbox" name="isPrivate" value="'); if($bucketlist->isPrivate == 1){echo('0"');}else{echo('1"');}if($bucketlist->isPrivate == 1){echo("checked>");}else{echo(">");}
 
      echo('
-  <button type="submit" >Submit</button>
+  <button class="button button__submit" type="submit" >Submit</button>
   </form>
 </div>
 ');}?>
+</main>
 
 <?php
 // if(isset($_SESSION["userId"]) && $_SESSION['userId']=== $bucketlist["user_id"]){
@@ -145,5 +146,4 @@ else{
 <script src="./js/detailGuest.js"></script>');
 }
 ?>
-</main>
 
