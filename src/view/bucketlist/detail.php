@@ -42,9 +42,13 @@ echo('
 <div class="detail__wrapper">
   <div class="bucketlist__title">'. $bucketlist["name"] .'</div>
   <div class="editDiv"><a class="edit-link">Edit</a></div>
+  <div class="threedot">
+    <a class="threedot__link">...</a>
+    <div class="threedotDropdown hidden">
+      <a class="delete-link delete" href="index.php?page=profile&action=delete&id='. $_SESSION["detailBucketlist"].'"> Delete Bucketlist </a>
+    </div>
 
-  <a class="threedot">...</a>
-
+  </div>
   <div class="description__wrapper">
     <p>'. $bucketlist["description"] .'</p>
   </div>
@@ -52,34 +56,34 @@ echo('
     <ul class="activityList">
     </ul>
       <li>
-      <a class="addActivityLink" href="">Add new activity</a>
-      </li>');
+      <a class="addActivityLink" href="">Add new activity</a>'
+      );
 
 if(isset($_SESSION["userId"]) && $_SESSION['userId']=== $bucketlist["user_id"]){
 echo('
 <div class="addActivity hidden ">
   <form id="addActivityForm" method="post" action="index.php?page=detail&id='. $_SESSION["detailBucketlist"].'">
   <input type="hidden" name="action" value="addActivity">
-  <input type="text" name="name" required placeholder="Bucketlist name" size="32"></br>
-    <input type="date" name="date" required placeholder="Bucketlist date"></br>
-    <input type="text" name="place" required placeholder="Bucketlist place" size="255"></br>
-    <input type="number" name="price" required placeholder="Bucketlist price" ></br>
-    <input type="text" name="company" required placeholder="Bucketlist company" size="255"></br>
-    <input list="categorydatalist" id="categories" name="category" required/>
+  <input class="addName" type="text" name="name" required placeholder="Activity name" size="32"></br>
+    <input class="addDate" type="date" name="date" required placeholder="Date"></br>
+    <input class="addPlace" type="text" name="place" required placeholder="Place" size="255"></br>
+    <input class="addPrice" type="number" name="price" required placeholder="Price" ></br>
+    <input class="addCompany" type="text" name="company" required placeholder="Company" size="255"></br>
+    <input class="addCategory" list="categorydatalist" id="categories" placeholder="category" name="category" required/>
     <datalist  id="categorydatalist" name="categorydatalist">
             <select class="categorydatalist--list" name="categorieDataListSelect">');
 
             foreach($categories as $category){
-             echo ('<option value="'.$category->id.'">'.$category->name.'</option>');
+             echo ('<option>'.$category->name.'</option>');
             }
           echo('
             </select>
           </datalist>
-  <input type="submit" value="add new activity">
+  <input class="button button__submit" type="submit" value="add new activity">
   </form>
       </div>
           ');}
-
+echo('</li>');
 
 
 echo('
@@ -101,14 +105,6 @@ echo('
      echo('
   <button type="submit" >Submit</button>
   </form>
-</div>
-<div class="threedotDropdown hidden">
-  <ul>
-    <li>                <a
-                    class="delete-link delete"
-                    href="index.php?page=profile&action=delete&id='. $_SESSION["detailBucketlist"].'"> Delete Bucketlist
-                </a></li>
-  </ul>
 </div>
 ');}?>
 

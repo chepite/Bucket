@@ -11,8 +11,9 @@
     $location.innerHTML = '';
     $location.innerHTML = data.map(activity => {
       return `<li>
-      <div>${activity.name}</div>
-      <div>${activity.date}</div>
+      <div class="activity__name">${activity.name}</div>
+      <div class="activity__date">${activity.date}</div>
+      <div class="activity__extra">${activity.place} &euro;${activity.price}</div>
       <a class="deleteActivity-link delete" href="${url}&action=deleteActivity&Activityid=${activity.id}"> Delete Activity</a>
       </li>`;}).join('');
   };
@@ -45,7 +46,9 @@
   const handleClickThreedot = e => {
     e.preventDefault();
     const $dropdown = document.querySelector('.threedotDropdown');
-    $dropdown.classList.toggle('hidden');
+    const $threedotLink = document.querySelector('.threedot__link');
+    $dropdown.classList.toggle('hidden')
+    $threedotLink.classList.toggle('hidden');
   };
 
   const handleClickNew = e => {
