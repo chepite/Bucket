@@ -25,7 +25,7 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
         <h3 class="CTA__title">Plan your future with us!</h3>
       <p class="CTA__paragraph">With bucket, you can prepare and personalise bucket lists and start living your life</p>
       <a href="
-      <?php 
+      <?php
       if(empty($_SESSION['userId'])){
       echo('index.php?page=login');}
       else{echo('index.php?page=profile');} ?>" class="actual__CTA">Buck it!</a>
@@ -36,16 +36,24 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
       <p class="slogan">Buck it! Just live a little!</p>
   </div>
   <div class="leaderboard__wrapper">
-    <div class="leaderboard__title--wrapper"> 
+    <div class="leaderboard__title--wrapper">
         <h4 class="leaderboard__title">
           ...Most popular lists...
         </h4>
     </div>
     <div class="leaderboard">
-    
+    <?php
+    if(isset($popular[0])){
+      echo('<h2>first:'.$popular[0].'</h2>');}
+      if(isset($popular[1])){
+      echo('<h2>second:'.$popular[1].'</h2>');}
+      if(isset($popular[2])){
+      echo('<h2>third:'.$popular[2].'</h2>');}
+    ?>
+
     </div>
   </div>
-  
+
 </main>
 
 <script src="./js/search.js"></script>

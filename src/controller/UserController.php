@@ -3,6 +3,8 @@
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../model/User.php';
 require_once __DIR__ . '/../model/Bucketlist.php';
+require_once __DIR__ . '/../model/Like.php';
+
 
 
 
@@ -57,6 +59,22 @@ class UserController extends Controller {
     $bucketlists = $this->_getFormSearchResults();
     $this->set('bucketlists', $bucketlists);
     $this->set("title", "home");
+
+    //test leaderboard
+    $popularid= Like::select("Bucketlist_id")->groupBy('Bucketlist_id')->orderByRaw('COUNT(*) DESC')
+    ->limit(3)
+    ->get();
+    //how to get the id
+    // echo($popular[0]["Bucketlist_id"]);
+    $popular = [];
+     if(isset($popularid[0])){
+      array_push($popular,Bucketlist::where("id", $popularid[0]["Bucketlist_id"])->first());}
+       if(isset($popularid[1])){
+      array_push($popular,Bucketlist::where("id", $popularid[1]["Bucketlist_id"])->first());}
+       if(isset($popularid[2])){
+      array_push($popular,Bucketlist::where("id", $popularid[2]["Bucketlist_id"])->first());}
+    $this->set("popular", $popular);
+    //end test leaderboard
   }
  public function login()
     {
