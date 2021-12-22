@@ -414,6 +414,7 @@ input, span, label{
 }
 
 .bucketlist__description {
+  align-self: center;
   width: 80%;
   font-size: 1.5rem;
   margin: 1rem;
@@ -466,10 +467,15 @@ label{
   width: 100%;
   height: fit-content;
   border: 5px solid black;
+  background-color: #fd795b; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #fd795b , #fe9a84);
+  padding-bottom:4rem;
 }
-.placement__wrapper{
-  margin: 1rem;
-  font-size: 5rem;
+.placement{
+  width: 10%;
+  align-self: center;
+  margin-left: 2rem;
+  font-size:4rem;
 }
 
 
@@ -491,6 +497,22 @@ label{
 }
   .bucketlist__description {
   display: none;
+}
+.leaderboard{
+  padding: 1rem;
+  margin-top: 5rem;
+  width: 100%;
+  height: fit-content;
+  border: 5px solid black;
+  background-color: #fd795b; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #fd795b , #fe9a84);
+  padding-bottom:4rem;
+}
+.placement{
+  width: 10%;
+  align-self: center;
+  margin-left: 2rem;
+  font-size:2rem;
 }
 }
 
@@ -713,6 +735,22 @@ label{
   margin-top: 2rem;
   width: 100%;
   
+}
+.leaderboard{
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  height: fit-content;
+  border: 5px solid black;
+  background-color: #fd795b; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, #fd795b , #fe9a84);
+  padding-bottom:3rem;
+}
+.placement{
+  width: 100%;
+  align-self: center;
+  margin-left: 2rem;
+  font-size:4rem;
 }
 }
 

@@ -44,32 +44,32 @@ echo('<p class="welcome__text">welcome back ' . $_SESSION['username'] . '</p>');
     <div class="leaderboard">
         <?php
     if(isset($popular[0])){
-      echo(`
-        <div class="placement__wrapper">
-          <a href="index.php?page=detail&id=`. $popular[0]->id .`">
+      echo('
+        <div class="bucketlist__wrapper">
+          <a href="index.php?page=detail&id='. $popular[0]->id .'">
             <div class="placement"><p>1st</p></div>
-            <div class="placement__name">` . $popular[0]->name . `</div>
-            <div class="placement__description"><p>Description:</p>`. $popular[0]->description .`</div>
+            <div class="bucketlist__name">' . $popular[0]->name . '</div>
+            <div class="bucketlist__description"><p>Description:</p>'. $popular[0]->description .'</div>
           </a>
-        </div>`);}
+        </div>');}
       if(isset($popular[1])){
-      echo(`
-        <div class="placement__wrapper">
-          <a href="index.php?page=detail&id=`. $popular[1]->id .`">
+      echo('
+        <div class="bucketlist__wrapper">
+          <a href="index.php?page=detail&id='. $popular[1]->id .'">
             <div class="placement"><p>2nd</p></div>
-            <div class="placement__name">` . $popular[1]->name . `</div>
-            <div class="placement__description"><p>Description:</p>`. $popular[1]->description .`</div>
+            <div class="bucketlist__name">' . $popular[1]->name . '</div>
+            <div class="bucketlist__description"><p>Description:</p>'. $popular[1]->description .'</div>
           </a>
-        </div>`);}
+        </div>');}
       if(isset($popular[2])){
-      echo(`
-        <div class="placement__wrapper">
-          <a href="index.php?page=detail&id=`. $popular[2]->id .`">
+      echo('
+        <div class="bucketlist__wrapper">
+          <a href="index.php?page=detail&id='. $popular[2]->id .'">
             <div class="placement"><p>3rd</p></div>
-            <div class="placement__name">` . $popular[2]->name . `</div>
-            <div class="placement__description"><p>Description:</p>`. $popular[2]->description .`</div>
+            <div class="bucketlist__name">' . $popular[2]->name . '</div>
+            <div class="bucketlist__description"><p>Description:</p>'. $popular[2]->description .'</div>
           </a>
-        </div>`);}
+        </div>');}
     ?>
     
 
